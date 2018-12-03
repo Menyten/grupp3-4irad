@@ -1,21 +1,19 @@
-<form action="">
-  <!-- Do we need the action attribute? -->
-
+<section>
   <section class="row">
 
     <section class="col-6">
       <div class="form-group">
-        <label for="player-name">Player 1:</label>
-        <input type="text" class="form-control" id="player-name" placeholder="Enter player name">
+        <label for="player-name">Spelare 1:</label>
+        <input type="text" class="form-control" id="player-name" placeholder="Spelar namn">
       </div>
     </section>
 
     <section class="col-6">
       <div class="form-group">
-        <label for="type-of-player">Opponent</label>
+        <label for="type-of-player">Typ</label>
         <select class="form-control" id="type-of-player">
-          <option>Player 2</option>
-          <option>Computer</option>
+          <option value="player">Spelare</option>
+          <option value="computer">Dator</option>
         </select>
       </div>
     </section>
@@ -26,17 +24,17 @@
 
     <section class="col-6">
       <div class="form-group">
-        <label for="player2-name">Player 2:</label>
-        <input type="text" class="form-control" id="player2-name" placeholder="Enter player name">
+        <label for="player2-name">Spelare 2:</label>
+        <input type="text" class="form-control" id="player2-name" placeholder="Spelar namn">
       </div>
     </section>
 
     <section class="col-6">
       <div class="form-group">
-        <label for="type-of-player">Opponent</label>
-        <select class="form-control" id="type-of-player">
-          <option>Player 1</option>
-          <option>Computer</option>
+        <label for="type-of-player2">Typ</label>
+        <select class="form-control" id="type-of-player2">
+          <option value="player">Spelare</option>
+          <option value="computer">Dator</option>
         </select>
       </div>
     </section>
@@ -45,10 +43,10 @@
 
   <section class="row">
     <section class="col-6">
-      <a href="/" class="btn btn-danger" role="button" aria-pressed="true">Go Back</a>
+      <a href="/" class="btn btn-danger" role="button" aria-pressed="true">Tillbaka</a>
     </section>
     <section class="col-6">
-      <button type="submit" class="btn btn-primary">Play</button>
+      <button id="players-and-opponents" class="btn btn-primary">Spela</button>
     </section>
   </section>
-</form>
+</section>
