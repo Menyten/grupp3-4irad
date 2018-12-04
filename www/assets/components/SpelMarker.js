@@ -24,7 +24,7 @@ class SpelMarker extends Component{
         this.render();*/
         //console.log(this);
         //$(this.baseEl).css('background-color', 'red');
-        this.baseEl.find('.spel-marker-click-area').addClass('marker-red');
+        //this.baseEl.find('.spel-marker-click-area').addClass('marker-red');
        
     }
 }
