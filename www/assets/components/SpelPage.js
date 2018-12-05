@@ -14,7 +14,7 @@ class SpelPage extends Component{
             new SpelCol()
                     
         ];     
-
+        // this.newGamePage = new NewGamePage();
     }
 
 }
