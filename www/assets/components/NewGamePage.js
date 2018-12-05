@@ -1,8 +1,10 @@
 class NewGamePage extends Component {
-  constructor() {
+  constructor(addPlayerCallback, newGameCallback) {
     super();
     this.addRoute('/new-game', 'New Game');
     this.addEvents({ 'click #players-and-opponents': 'getInput' });
+
+    this.addPlayerCallback = addPlayerCallback;
   }
   getInput() {
 
@@ -25,5 +27,8 @@ class NewGamePage extends Component {
     console.log(playerTwo);
     console.log(playerOneOpponent);
     console.log(playerTwoOpponent);
+
+    this.addPlayerCallback(playerOne);
+    this.addPlayerCallback(playerTwo);
   }
 }
