@@ -3,6 +3,7 @@ class InputPage extends Component {
     super();
     this.addRoute('/new-game', 'New Game');
     this.addEvents({ 'click #players-and-opponents': 'getInput' });
+    this.game = new Board();
   }
   getInput() {
 
@@ -20,5 +21,7 @@ class InputPage extends Component {
     if (playerTwo === true) {
       playerTwo = p2.val();
     }
+
+    this.game.createBoard();
   }
 }
