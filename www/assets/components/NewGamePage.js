@@ -1,8 +1,11 @@
 class NewGamePage extends Component {
-  constructor() {
+  constructor(playPage) {
     super();
     this.addRoute('/new-game', 'New Game');
-    this.addEvents({ 'click #players-and-opponents': 'getInput' });
+    this.addEvents({ 'click #start-game': 'startGame' });
+    this.playPage = playPage;
+    this.playerOne = {};
+    this.playerTwo = {};
   }
   getInput() {
 
@@ -21,9 +24,19 @@ class NewGamePage extends Component {
       playerTwo = p2.val();
     }
 
-    console.log(playerOne);
-    console.log(playerTwo);
-    console.log(playerOneOpponent);
-    console.log(playerTwoOpponent);
+    this.playerOne = {
+      name: playerOne,
+      type: playerOneOpponent
+    }
+
+    this.playerTwo = {
+      name: playerTwo,
+      type: playerTwoOpponent
+    }
+  }
+
+  startGame() {
+    this.getInput();
+    this.playPage.newGame(this.playerOne, this.playerTwo);
   }
 }
