@@ -3,28 +3,19 @@ class SpelMarker extends Component{
     constructor(color){
 
         super();
-        this.addEvents({
-            'click .spel-marker-click-area': 'changeMyColor'
-          });
         this.color= color;
-        this.whatColor();
+        this.colorRed;
+        this.setColor();
     }
 
-    whatColor(){
+    setColor(){
 
         if(this.color=='red'){
-           
-           //some code
+           this.colorRed=true;
+        }
+        else if(this.color=='green'){
+            this.colorRed=false;
         }
     }
 
-    changeMyColor(){
-        
-        /*$(this).css('background-color', 'red');
-        this.render();*/
-        //console.log(this);
-        //$(this.baseEl).css('background-color', 'red');
-        //this.baseEl.find('.spel-marker-click-area').addClass('marker-red');
-       
-    }
 }

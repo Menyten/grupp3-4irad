@@ -1,42 +1,60 @@
 class SpelCol extends Component{
 
-    constructor(){
+    constructor(spelpage){
         super();
-
+        this.spelPage=spelpage;
         this.addEvents({
             'click .spel-col-click-area':'doSomething'
         });
 
-        this.spelMarkers=[
-            new SpelMarker('somecolor'),
-            new SpelMarker('somecolor'),
-            new SpelMarker('somecolor'),
-            new SpelMarker('somecolor'),
-            new SpelMarker('somecolor'),
-            new SpelMarker('somecolor')         
-        ];
-
-        this.checkSomething();
- 
-    }
-
-    checkSomething(){
-
-        if(this.spelMarkers[0].color=='red'){
-
-            alert('say whaat');
-        }
-
+        this.spelMarkers=[];
+        
     }
 
     doSomething(){
 
-        alert('hej');
-        console.log(this);
+        if(this.spelPage.player1Turn==true){
+            this.spelMarkers.push(new SpelMarker('red'));
+            this.render();
+        }
+        else if(this.spelPage.player2Turn==true){
+            this.spelMarkers.push(new SpelMarker('green'));
+            this.render();
+        }
 
-       /* this.spelMarkers.splice(5,1);
-        this.spelMarkers.push(new SpelMarker('red')); */
-        
+        this.checkVerticalBingo();
     }
+   
+
+    checkVerticalBingo(){
+
+        if(
+           this.spelMarkers[0].color=='red' && 
+           this.spelMarkers[1].color=='red' &&
+           this.spelMarkers[2].color=='red' &&
+           this.spelMarkers[3].color=='red'){
+
+            alert('Bingo');
+        }
+        else if(
+            this.spelMarkers[1].color=='red' && 
+            this.spelMarkers[2].color=='red' &&
+            this.spelMarkers[3].color=='red' &&
+            this.spelMarkers[4].color=='red'){
+
+             alert('Bingo');
+        }
+        else if(
+            this.spelMarkers[2].color=='red' && 
+            this.spelMarkers[3].color=='red' &&
+            this.spelMarkers[4].color=='red' &&
+            this.spelMarkers[5].color=='red'){
+
+             alert('Bingo');
+        }
+
+    }
+
+   
 
 }
