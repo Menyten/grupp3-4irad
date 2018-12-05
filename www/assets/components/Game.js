@@ -63,6 +63,8 @@ class Game extends Component {
 
   checkForWin() {
     this.checkForHorizontalWin();
+    this.checkForVerticalWin();
+    this.checkForDiagonalWin();
   }
 
   checkForHorizontalWin() {
@@ -93,6 +95,95 @@ class Game extends Component {
     }
     // in case of no winner, return false
     return false;
+  }
+
+  checkForVerticalWin() {
+    const columns = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+    for (let column of columns) {
+      const regex = new RegExp(column + '{1}', 'g');
+      // this nifty regex will get us all the moves on the specified column
+      const movesOnColumn = this.game.match(regex);
+      // if there are no moves, or less than four, there is no need to check if a player has won on that column
+      if (!movesOnColumn || movesOnColumn.length < 4) {
+        continue;
+      } else {
+        // this is roughly the same logic as in the horizontal win checking
+        for (let i = 1; i < movesOnColumn.length - 2; i++) {
+          if (
+            this.game.nth_index_of(column, i) % 2 === this.game.nth_index_of(column, i + 1) % 2
+            && this.game.nth_index_of(column, i) % 2 === this.game.nth_index_of(column, i + 2) % 2
+            && this.game.nth_index_of(column, i) % 2 === this.game.nth_index_of(column, i + 3) % 2          
+            ) {
+              alert('You win vertically');
+              return this.game.nth_index_of(column, i) % 2 ? 2 : 1
+            }
+        }
+      }
+
+    }
+  }
+
+  checkForDiagonalWin() {
+    // diagonal wins are possible upwards from the lower three rows and downwards from the higher three
+    // due the constraints of the playing field, we can cover all cases if we check to the right from columns a-c
+    // and to the left from columns e-g
+    const columns = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+    // first the outer loop for the first three columns
+    for (let i = 0; i < 3; i++) {
+      // and now the loop checking up and to the right from the bottom three rows
+      for (let j = 1; j <= 3; j++) {
+        if (
+          this.game.nth_index_of(columns[i], j) !== -1
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i+1], j+1) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i+2], j+2) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i+3], j+3) % 2
+        ) {
+          alert('You win diagonally from bottom to top right')
+          return this.game.nth_index_of(columns[i], j) ? 2 : 1
+        }        
+      }
+      // loop checking down and to the right for the upper three rows
+      for (let j = 4; j <= 6; j++) {
+        if (
+          this.game.nth_index_of(columns[i], j) !== -1
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i+1], j-1) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i+2], j-2) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i+3], j-3) % 2
+        ) {
+          alert('You win diagonally from top to bottom right')
+          return this.game.nth_index_of(columns[i], j) ? 2 : 1
+        }        
+      }
+
+    }
+    // and now the outer loop for the last three columns: 
+    for (let i = 4; i < 7; i++) {
+      // and the loop checking up and to the left for the bottom three rows
+      for (let j = 1; j <= 3; j++) {
+        if (
+          this.game.nth_index_of(columns[i], j) !== -1
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i-1], j+1) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i-2], j+2) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i-3], j+3) % 2
+        ) {
+          alert('You win diagonally from bottom to top left')
+          return this.game.nth_index_of(columns[i], j) ? 2 : 1
+        }        
+      }
+      // loop checking down and to the right for the upper three rows
+      for (let j = 4; j <= 6; j++) {
+        if (
+          this.game.nth_index_of(columns[i], j) !== -1
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i-1], j-1) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i-2], j-2) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i-3], j-3) % 2
+        ) {
+          alert('You win diagonally from top to bottom left')
+          return this.game.nth_index_of(columns[i], j) ? 2 : 1
+        }        
+      }
+
+    }
   }
 
 
