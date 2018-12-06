@@ -5,7 +5,7 @@ class Column extends Component {
     this.markers = [new Markers()];
     this.columnWidth = columnWidth;
     this.addEvents({
-      'click .whatever': 'createMarker',
+      'click': 'createMarker',
     });
   }
 

@@ -68,6 +68,7 @@ class Component {
       let methodName = eventMap[event];
       let type = event.split(' ').shift();
       let selector = event.substr(event.indexOf(' ') + 1);
+      if(!event.includes(' ')){selector = '';}
       $(document).on(type,`[data-instance-id=${this._id}] ${selector}`, () => {
         return this[methodName]();
       });
