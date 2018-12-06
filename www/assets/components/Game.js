@@ -5,48 +5,47 @@ class Game extends Component {
     this.playerOne = {};
     this.playerTwo = {};
     this.game = '';
-    this.playerOneMove = true;
+    this.isPlayerOnesMove = true;
+    // the following adds a custom methods to all strings that will be very useful here
     this.addNthIndexOfToStrings();
 
     this.addEvents({
       'click .playing-field': 'handleColumnClick'
     })
-
   }
 
   startGame(playerOne, playerTwo) {
     this.playerOne = playerOne;
     this.playerTwo = playerTwo;
-    this.playerOneMove = true;
+    this.isPlayerOnesMove = true;
     if (playerOne.type === 'computer') {
+      // warning this function does not exist
       makeMove(makeComputerMove());
     }
-
   }
 
   handleColumnClick(event) {
     const move = event.target.className[0];
-    console.log(event.target.className);
 
     if (!this.validateMove(move)) {
-      alert('INVALID MOVE SUCKER')
+      alert('INVALID MOVE SUCKER');
       return
     }
 
-    if (this.playerOneMove && this.playerOne.type === 'player') {
+    if (this.isPlayerOnesMove && this.playerOne.type === 'player') {
       this.makeMove(move);
       return
     }
 
-    if (!this.playerOneMove && this.playerTwo.type === 'player') {
+    if (!this.isPlayerOnesMove && this.playerTwo.type === 'player') {
       this.makeMove(move);
-    }   
+    }
 
   }
 
   validateMove(move) {
     const regex = new RegExp(move + '{1}', 'g');
-    // identify which row the move was played on
+    // identify which row the move was played on and get all the moves on that column
     const previousMovesOnColumn = this.game.match(regex);
     if (previousMovesOnColumn && previousMovesOnColumn.length >= 6) {
       return false
@@ -57,9 +56,9 @@ class Game extends Component {
 
   makeMove(move) {
     this.game += move;
-    this.playerOneMove = !this.playerOneMove;
+    this.isPlayerOnesMove = !this.isPlayerOnesMove;
     this.updatePlayingField(move);
-    if(this.checkForWin()) {
+    if (this.checkForWin()) {
       alert('YOU WIN');
     }
 
@@ -101,12 +100,13 @@ class Game extends Component {
       //loop through the first four items to see if the following three are identical (indicating a win)
 
       for (let i = 0; i < 4; i++) {
-        if (row[i] !== -1 && row[i] === row[i+1] && row[i] === row[i+2] && row[i] === row [i+3] ) {
+        if (row[i] !== -1 && row[i] === row[i + 1] && row[i] === row[i + 2] && row[i] === row[i + 3]) {
           // return the number of the winning player
-          alert('You win sucker');
-          return row[i] ? 2 : 1
+          const winner = row[i] ? 2 : 1;
+          alert(`You win horizontally, player ${winner}`);
+          return winner
         }
-      }         
+      }
     }
     // in case of no winner, return false
     return false;
@@ -127,11 +127,11 @@ class Game extends Component {
           if (
             this.game.nth_index_of(column, i) % 2 === this.game.nth_index_of(column, i + 1) % 2
             && this.game.nth_index_of(column, i) % 2 === this.game.nth_index_of(column, i + 2) % 2
-            && this.game.nth_index_of(column, i) % 2 === this.game.nth_index_of(column, i + 3) % 2          
-            ) {
-              alert('You win vertically');
-              return this.game.nth_index_of(column, i) % 2 ? 2 : 1
-            }
+            && this.game.nth_index_of(column, i) % 2 === this.game.nth_index_of(column, i + 3) % 2
+          ) {
+            alert('You win vertically');
+            return this.game.nth_index_of(column, i) % 2 ? 2 : 1
+          }
         }
       }
 
@@ -149,27 +149,26 @@ class Game extends Component {
       for (let j = 1; j <= 3; j++) {
         if (
           this.game.nth_index_of(columns[i], j) !== -1
-          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i+1], j+1) % 2
-          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i+2], j+2) % 2
-          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i+3], j+3) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i + 1], j + 1) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i + 2], j + 2) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i + 3], j + 3) % 2
         ) {
           alert('You win diagonally from bottom to top right')
           return this.game.nth_index_of(columns[i], j) ? 2 : 1
-        }        
+        }
       }
       // loop checking down and to the right for the upper three rows
       for (let j = 4; j <= 6; j++) {
         if (
           this.game.nth_index_of(columns[i], j) !== -1
-          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i+1], j-1) % 2
-          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i+2], j-2) % 2
-          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i+3], j-3) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i + 1], j - 1) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i + 2], j - 2) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i + 3], j - 3) % 2
         ) {
           alert('You win diagonally from top to bottom right')
           return this.game.nth_index_of(columns[i], j) ? 2 : 1
-        }        
+        }
       }
-
     }
     // and now the outer loop for the last three columns: 
     for (let i = 4; i < 7; i++) {
@@ -177,41 +176,40 @@ class Game extends Component {
       for (let j = 1; j <= 3; j++) {
         if (
           this.game.nth_index_of(columns[i], j) !== -1
-          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i-1], j+1) % 2
-          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i-2], j+2) % 2
-          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i-3], j+3) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i - 1], j + 1) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i - 2], j + 2) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i - 3], j + 3) % 2
         ) {
           alert('You win diagonally from bottom to top left')
           return this.game.nth_index_of(columns[i], j) ? 2 : 1
-        }        
+        }
       }
       // loop checking down and to the right for the upper three rows
       for (let j = 4; j <= 6; j++) {
         if (
           this.game.nth_index_of(columns[i], j) !== -1
-          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i-1], j-1) % 2
-          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i-2], j-2) % 2
-          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i-3], j-3) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i - 1], j - 1) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i - 2], j - 2) % 2
+          && this.game.nth_index_of(columns[i], j) % 2 === this.game.nth_index_of(columns[i - 3], j - 3) % 2
         ) {
-          alert('You win diagonally from top to bottom left')
+          alert('You win diagonally from top to bottom left');
           return this.game.nth_index_of(columns[i], j) ? 2 : 1
-        }        
+        }
       }
-
     }
   }
 
 
   addNthIndexOfToStrings() {
-    String.prototype.nth_index_of = function(pattern, n) {
+    String.prototype.nth_index_of = function (pattern, n) {
       let i = -1;
-  
+
       while (n-- && i++ < this.length) {
-          i = this.indexOf(pattern, i);
-          if (i < 0) break;
+        i = this.indexOf(pattern, i);
+        if (i < 0) break;
       }
-  
+
       return i;
-  }
+    }
   }
 }
