@@ -8,8 +8,8 @@ class InputPage extends Component {
 
     const p1 = $('#player1-name');
     const p2 = $('#player2-name');
-    let playerOne = p1.val().length >= 2 && p1.val().length <= 10;
-    let playerTwo = p2.val().length >= 2 && p2.val().length <= 10;
+    let playerOne = 'Joel'/* p1.val().length >= 2 && p1.val().length <= 10 */;
+    let playerTwo = 'Jaggo'/* p2.val().length >= 2 && p2.val().length <= 10 */;
     const playerOneOpponent = $('#type-of-player1').val();
     const playerTwoOpponent = $('#type-of-player2').val();
 
@@ -26,7 +26,6 @@ class InputPage extends Component {
 
   startGame() {
     this.getInput();
-    console.log('playpage:', this.playPage)
     this.playPage.newGame(this.playerOne, this.playerTwo);
   }
 }

@@ -9,7 +9,7 @@ class GamePage extends Component {
 
   newGame(playerOne, playerTwo) {
     this.activeGame = true;
+    this.game = new Board(this).createBoard();
     this.render();
-    this.game.startGame(playerOne, playerTwo);
   }
 }
