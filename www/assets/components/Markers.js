@@ -1,9 +1,10 @@
 class Markers extends Component {
-    constructor(color){
+  constructor(row, col, color) {
     super();
-
+    
+    this.row = row;
+    this.col = col;
     this.color = color;
 
-
-    }
+  }
 }
