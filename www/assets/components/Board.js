@@ -13,10 +13,10 @@ class Board extends Component {
     }
   }
 
-  createBoard() {
+  /* createBoard() {
     console.log(this.gameBoard)
     return this.gameBoard;
-  }
+  } */
 
   addMarkerToColumn(columnIndex, player){
     if(this.gameBoard[columnIndex] < this.numberOfRows) {

@@ -20,7 +20,7 @@ class InputPage extends Component {
       playerTwo = p2.val();
     }
 
-    this.game.createBoard();
+    /* this.game.createBoard(); */
   }
 
   startGame() {
