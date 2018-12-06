@@ -25,15 +25,33 @@ class Game extends Component {
   }
 
   handleColumnClick(event) {
-    const column = event.target.className[0];
-    if (this.playerOneMove && this.playerOne.type === 'player') {
-      this.makeMove(column);
-      return;
+    const move = event.target.className[0];
+
+    if (!this.validateMove(move)) {
+      alert('INVALID MOVE SUCKER')
+      return
     }
+
+    if (this.playerOneMove && this.playerOne.type === 'player') {
+      this.makeMove(move);
+      return
+    }
+
     if (!this.playerOneMove && this.playerTwo.type === 'player') {
-      this.makeMove(column);
+      this.makeMove(move);
     }   
 
+  }
+
+  validateMove(move) {
+    const regex = new RegExp(move + '{1}', 'g');
+    // identify which row the move was played on
+    const previousMovesOnColumn = this.game.match(regex);
+    if (previousMovesOnColumn && previousMovesOnColumn.length >= 6) {
+      return false
+    } else {
+      return true
+    }
   }
 
   makeMove(move) {
@@ -68,20 +86,16 @@ class Game extends Component {
   }
 
   checkForHorizontalWin() {
+    const columns = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
     // this function checks row for row to see if theres any horizontal winning going on
     for (let i = 1; i <= 6; i++) {
-      // make an array with the nth occurence of the column in question
+      // make an array with the nth occurence of all the columns
       // this is equal to the nth row of the playing board
-      const row = [
+      const row = [];
+      for (let column of columns) {
+        row.push(this.game.nth_index_of(column, i) % 2)
         // these values will be -1 if played by noone, 0 if played by player1 and 1 if played by player two
-        this.game.nth_index_of('a', i) % 2,
-        this.game.nth_index_of('b', i) % 2,
-        this.game.nth_index_of('c', i) % 2,
-        this.game.nth_index_of('d', i) % 2,
-        this.game.nth_index_of('e', i) % 2,
-        this.game.nth_index_of('f', i) % 2,
-        this.game.nth_index_of('g', i) % 2,
-      ]
+      }
 
       //loop through the first four items to see if the following three are identical (indicating a win)
 
