@@ -26,7 +26,7 @@ class Game extends Component {
 
   handleColumnClick(event) {
     const move = event.target.className[0];
-    console.log('making move:', move);
+    console.log('making move:', move, 'event.target:', event.target);
 
     if (!this.validateMove(move)) {
       alert('INVALID MOVE SUCKER');
