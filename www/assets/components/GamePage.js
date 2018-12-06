@@ -1,21 +1,20 @@
-class SpelPage extends Component{
+class GamePage extends Component{
 
     constructor(){
         super();
-        this.addRoute('/spel', 'Spel');
-
+        this.addRoute('/game', 'game');
         this.addEvents({
-            'click .spel-col-click-area':'changeTurn'
+            'click .game-col-click-area':'changeTurn'
         });
 
-        this.spelCols = [
-            new SpelCol(this),
-            new SpelCol(this),
-            new SpelCol(this),
-            new SpelCol(this),
-            new SpelCol(this),
-            new SpelCol(this),
-            new SpelCol(this)                   
+        this.gameCols = [
+            new GameCol(this),
+            new GameCol(this),
+            new GameCol(this),
+            new GameCol(this),
+            new GameCol(this),
+            new GameCol(this),
+            new GameCol(this)                   
         ];     
        
         this.player1Turn;

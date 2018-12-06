@@ -1,4 +1,4 @@
-class SpelMarker extends Component{
+class GameMarker extends Component{
 
     constructor(color){
 
