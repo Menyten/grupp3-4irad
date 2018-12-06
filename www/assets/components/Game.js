@@ -26,6 +26,7 @@ class Game extends Component {
 
   handleColumnClick(event) {
     const move = event.target.className[0];
+    console.log('making move:', move);
 
     if (!this.validateMove(move)) {
       alert('INVALID MOVE SUCKER');
@@ -44,6 +45,7 @@ class Game extends Component {
   }
 
   validateMove(move) {
+    if (!move) { return false }
     const regex = new RegExp(move + '{1}', 'g');
     // identify which row the move was played on and get all the moves on that column
     const previousMovesOnColumn = this.game.match(regex);
@@ -102,7 +104,7 @@ class Game extends Component {
       for (let i = 0; i < 4; i++) {
         if (row[i] !== -1 && row[i] === row[i + 1] && row[i] === row[i + 2] && row[i] === row[i + 3]) {
           // return the number of the winning player
-          const winner = row[i] ? 2 : 1;
+          const winner = row[i] ? this.playerTwo.name : this.playerOne.name;
           alert(`You win horizontally, player ${winner}`);
           return winner
         }

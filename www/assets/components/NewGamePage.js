@@ -1,7 +1,6 @@
 class NewGamePage extends Component {
   constructor(playPage) {
     super();
-    this.addRoute('/new-game', 'New Game');
     this.addEvents({ 'click #start-game': 'startGame' });
     this.playPage = playPage;
     this.playerOne = {};
@@ -13,8 +12,8 @@ class NewGamePage extends Component {
     const p2 = $('#player2-name');
     let playerOne = p1.val().length >= 2 && p1.val().length <= 10;
     let playerTwo = p2.val().length >= 2 && p2.val().length <= 10;
-    const playerOneOpponent = $('#type-of-player').val();
-    const playerTwoOpponent = $('#type-of-player2').val();
+    const playerOneType = $('#type-of-player').val();
+    const playerTwoType = $('#type-of-player2').val();
 
     if (playerOne === true) {
       playerOne = p1.val();
@@ -26,12 +25,12 @@ class NewGamePage extends Component {
 
     this.playerOne = {
       name: playerOne,
-      type: playerOneOpponent
+      type: playerOneType
     }
 
     this.playerTwo = {
       name: playerTwo,
-      type: playerTwoOpponent
+      type: playerTwoType
     }
   }
 
