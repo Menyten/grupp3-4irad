@@ -1,7 +1,6 @@
 class NewGamePage extends Component {
   constructor(playPage) {
     super();
-    this.addRoute('/new-game', 'New Game');
     this.addEvents({ 'click #start-game': 'startGame' });
     this.playPage = playPage;
     this.playerOne = {};
