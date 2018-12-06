@@ -5,12 +5,12 @@ class Column extends Component {
     this.markers = [new Markers()];
     this.columnWidth = columnWidth;
     this.addEvents({
-      'click column': 'createMarker'
-    })
+      'click .whatever': 'createMarker',
+    });
   }
 
   createMarker(){
-    console.log('add some markers fam!')
+    console.log('add some markers fam!');
     this.markers = [ ...this.markers, new Markers() ];
   }
 
