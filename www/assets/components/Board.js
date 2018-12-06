@@ -2,9 +2,8 @@ class Board extends Component {
   constructor() {
     super();
     this.gameBoard = [];
-    this.numberOfColumns = 3;
+    this.numberOfColumns = 7;
     this.numberOfRows = 6;
-
     this.createColumns();
   }
 
