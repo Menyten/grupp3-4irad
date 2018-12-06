@@ -9,7 +9,7 @@ class Game extends Component {
     this.addNthIndexOfToStrings();
 
     this.addEvents({
-      'click .playing-field .col-1': 'handleColumnClick'
+      'click .playing-field': 'handleColumnClick'
     })
 
   }
@@ -26,6 +26,7 @@ class Game extends Component {
 
   handleColumnClick(event) {
     const move = event.target.className[0];
+    console.log(event.target.className);
 
     if (!this.validateMove(move)) {
       alert('INVALID MOVE SUCKER')
