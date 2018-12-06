@@ -1,7 +1,8 @@
 class InputPage extends Component {
-  constructor() {
+  constructor(playPage) {
     super();
     this.addEvents({ 'click #start-game': 'startGame' });
+    this.playPage = playPage;
   }
   getInput() {
 
@@ -25,6 +26,7 @@ class InputPage extends Component {
 
   startGame() {
     this.getInput();
+    console.log('playpage:', this.playPage)
     this.playPage.newGame(this.playerOne, this.playerTwo);
   }
 }
