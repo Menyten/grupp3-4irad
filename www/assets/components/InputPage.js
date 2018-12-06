@@ -1,7 +1,6 @@
 class InputPage extends Component {
   constructor() {
     super();
-    this.addRoute('/new-game', 'New Game');
     this.addEvents({ 'click #players-and-opponents': 'getInput' });
     this.game = new Board();
   }
@@ -22,6 +21,5 @@ class InputPage extends Component {
       playerTwo = p2.val();
     }
 
-    this.game.createBoard();
   }
 }

@@ -1,0 +1,44 @@
+.game-board-wrapper {
+  display: flex;
+  justify-content: center;
+
+  .game-board {
+    background-color: #e0e0e0;
+    flex: 1;
+    max-width: 90vh;
+    border-radius: 10px;
+    background-image: url('/assets/img/wood1.jpg');
+    
+    .row {
+      justify-content: space-evenly;
+      margin: 0;
+
+      .col {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 5px;
+        cursor: pointer;
+        
+        &:hover {
+          background-color: rgba(100, 100, 100, 0.5);
+        }
+
+        > div {
+          padding-top: 100%;
+          position: relative;
+
+          > div {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            background-color: white;
+          }
+        }
+      }
+    }
+  }
+
+}
