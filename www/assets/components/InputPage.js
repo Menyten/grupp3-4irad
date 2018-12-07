@@ -3,22 +3,24 @@ class InputPage extends Component {
     super();
     this.addEvents({ 'click #start-game': 'startGame' });
     this.playPage = playPage;
+    this.playerOne;
+    this.playerTwo;
   }
   getInput() {
 
     const p1 = $('#player1-name');
     const p2 = $('#player2-name');
-    let playerOne = 'Joel'/* p1.val().length >= 2 && p1.val().length <= 10 */;
-    let playerTwo = 'Jaggo'/* p2.val().length >= 2 && p2.val().length <= 10 */;
-    const playerOneOpponent = $('#type-of-player1').val();
-    const playerTwoOpponent = $('#type-of-player2').val();
+    let playerOne = p1.val().length >= 2 && p1.val().length <= 10;
+    let playerTwo = p2.val().length >= 2 && p2.val().length <= 10;
+    const playerOneType = $('#type-of-player1').val();
+    const playerTwoType = $('#type-of-player2').val();
 
     if (playerOne === true) {
-      playerOne = p1.val();
+      this.playerOne = new Player(p1.val(), playerOneType);
 
     }
     if (playerTwo === true) {
-      playerTwo = p2.val();
+      this.playerTwo = new Player(p2.val(), playerTwoType);
     }
 
     /* this.game.createBoard(); */
