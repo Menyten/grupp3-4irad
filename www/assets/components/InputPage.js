@@ -23,5 +23,8 @@ class InputPage extends Component {
     }
 
     this.game.createBoard();
+
+    $('footer').hide();
+    $('nav').hide();
   }
 }
