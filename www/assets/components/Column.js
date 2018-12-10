@@ -17,10 +17,10 @@ class Column extends Component {
   renderEmptySlots() {
     // the columns are set with flexbox to display the elements from bottom up
     // so after we render the markers, we fill the remaining spaces (if any) with empty divs
-    let emptySlots = 7 - this.markers.length;
+    let emptySlots = 6 - this.markers.length;
     let html = '';
     for (let i = 0; i < emptySlots; i++) {
-      html += '<div><div></div></div>';
+      html += '<div class="marker-slot"><div class="empty"></div></div>';
     }
     return html
   }
