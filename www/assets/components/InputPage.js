@@ -25,12 +25,17 @@ class InputPage extends Component {
 
     /* this.game.createBoard(); */
 
-    $('footer').hide();
-    $('nav').hide();
   }
 
   startGame() {
     this.getInput();
     this.playPage.newGame(this.playerOne, this.playerTwo);
+    $('footer').hide();
+    $('nav').hide();
+    $('.return').show();
   }
+  // returnToInputPage() {
+  //   $('footer').show();
+  //   $('nav').show();
+  // }
 }

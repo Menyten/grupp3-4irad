@@ -1,4 +1,7 @@
-<section class="${this.activeGame ? 'game-board' : '' }">
-  ${this.activeGame ? this.game : ''}
-  ${!this.activeGame ? this.inputPage : ''}
-</section>
+<div>
+  <a href="/new-game" role="button" class="btn btn-danger return">Cancel / Return</a>
+  <section class="${this.activeGame ? 'game-board' : '' }">
+    ${this.activeGame ? this.game : ''} 
+    ${!this.activeGame ? this.inputPage : ''}
+  </section>
+</div>
