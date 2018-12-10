@@ -10,10 +10,8 @@ class GamePage extends Component {
   }
 
   newGame(playerOne, playerTwo) {
-    console.log(playerOne);
-    console.log(playerTwo);
     this.activeGame = true;
-    this.game = new Board(this).createBoard();
+    this.game = new Board(this);
     this.render();
   }
 

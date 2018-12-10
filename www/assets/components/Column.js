@@ -10,13 +10,13 @@ class Column extends Component {
   }
 
   createMarker(){
-    /*console.log('add some markers fam!');
-    this.markers = [ ...this.markers, new Markers() ];*/
-    //let askGameEngine = new GameEngine();
-    //x.doSomething();
-
-    this.markers.push(new Markers('','','red'));
-    this.render();
+    // some simple validation to prevent playing on full columns
+    // at the moment it just does nothing if the colum is full, no error messages etc
+    if (this.markers && this.markers.length < 6) {
+      this.markers.push(new Marker());
+      this.render();
+      // when the game engine knows which player is playing we should also tell the marker which player it belongs to
+    }
   }
 
   renderEmptySlots() {
