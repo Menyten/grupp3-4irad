@@ -1,5 +1,26 @@
-.markers {
-  background-color: pink;
+
+.column{
+
+
+  height:500px;
+}
+.whatever{
+
+  height:500px;
+  width:100px;
+}
+
+
+
+.markers-red {
+  background-color: red;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin: 20px auto;
+}
+.markers-blue {
+  background-color: blue;
   height: 60px;
   width: 60px;
   border-radius: 50%;
@@ -8,4 +29,20 @@
 
 .whatever {
   border: 5px solid black;
+}
+
+.game-board{
+
+-webkit-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    -o-transform:rotate(180deg);
+    -ms-transform:rotate(180deg);
+    transform:rotate(180deg);
+}
+
+.game-engine-box{
+
+  border:solid black 1px;
+  width:100px;
+  height:100px;
 }

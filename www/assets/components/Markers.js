@@ -6,5 +6,14 @@ class Markers extends Component {
     this.col = col;
     this.color = color;
 
+    this.colorRed=true;
+
   }
+
+  hello(){
+
+    alert('hejjj');
+  }
+
+  
 }
