@@ -1,4 +1,15 @@
-<section class="${this.activeGame ? 'game-board' : '' }">
-  ${this.activeGame ? this.game : ''}
-  ${!this.activeGame ? this.inputPage : ''}
+<section>
+  <section class="${this.activeGame ? 'game-board' : '' }">
+    ${this.activeGame ? this.game : ''}
+    ${!this.activeGame ? this.inputPage : ''}
+  </section>
+  ${this.activeGame ? `<section class="row">
+    <section class="col-6 mt-5">
+      <a href="/new-game" id="quit-game" class="btn btn-secondary" role="button" aria-pressed="true">Avbryt</a>
+    </section>
+    <section class="col-6 mt-5">
+      <a href="/" id="to-startpage" class="btn btn-secondary" role="button" aria-pressed="true">Startsida</a>
+    </section>
+  </section>` : ``}
+
 </section>
