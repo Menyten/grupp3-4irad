@@ -1,11 +1,12 @@
 class Board extends Component {
-  constructor() {
+  constructor(playPage) {
     super();
     this.addRoute('/new-game', 'GAMETIME');
     this.columns = [];
     this.numberOfColumns = 7;
     this.numberOfRows = 6;
     this.createColumns();
+    this.playPage = playPage;
   }
 
   createColumns() {

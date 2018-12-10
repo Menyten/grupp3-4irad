@@ -9,9 +9,14 @@ class Column extends Component {
     });
   }
 
-  createMarker() {
-    console.log('add some markers fam!');
-    this.markers = [...this.markers, new Marker()];
+  createMarker(){
+    /*console.log('add some markers fam!');
+    this.markers = [ ...this.markers, new Markers() ];*/
+    //let askGameEngine = new GameEngine();
+    //x.doSomething();
+
+    this.markers.push(new Markers('','','red'));
+    this.render();
   }
 
   renderEmptySlots() {
