@@ -4,7 +4,7 @@ class GamePage extends Component {
     this.addRoute('/new-game', 'New Game');
     this.addEvents({ 'click #quit-game': 'newInput' });
     this.addEvents({ 'click #to-startpage': 'newInput' });
-    this.addEvents({'click .return': 'returnToInputPage'});
+    this.addEvents({'click .showNavFoot': 'showNavFoot'});
     this.inputPage = new InputPage(this);
     this.game = new Board(this);
     this.activeGame = false;
@@ -30,8 +30,8 @@ class GamePage extends Component {
     return this.inputPage.playerTwo.name;
   }
   
-  returnToInputPage(){
-    this.activeGame = false;
+  showNavFoot(){
+    // this.activeGame = false;
     $('footer').show();
     $('nav').show();
     $('.return').hide();
