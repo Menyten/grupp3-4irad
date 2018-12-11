@@ -1,7 +1,8 @@
 class Modals extends Component {
     constructor(){
         super();
-        this.victoryModal() // remove me when done
+        //this.victoryModal()
+       //this.loserModal()
     }
 
     show(){
@@ -12,15 +13,16 @@ class Modals extends Component {
     }
 
     victoryModal(){
-        console.log('Det fungerar');
-        this.title = "winner";
+        this.title = "Grattis!  ";
         this.show();
 
     }
 
-    metod2(){
-        this.title = "u lost";
+    loserModal(){
+        this.title = "Du förlorade tyvärr";
         this.show();
     }
+
+
 
 }

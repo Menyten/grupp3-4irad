@@ -1,0 +1,35 @@
+.modal-content {
+    width: 600px;
+    height: 515px;
+}
+
+.modal-body {
+    background-image: url(https://images-na.ssl-images-amazon.com/images/I/913kQUZlZyL._SX425_.jpg);
+    background-size: cover;
+    
+}
+
+.modal-body img {
+    width: 100%;
+}
+
+.modal-header {
+    border-bottom: 0px;
+}
+
+.modal-footer {
+    border-top: 0px;
+}
+
+.goldenButton {
+    background-color: #ffd700;
+    color: black;
+    border-color: black;
+    opacity: 0.5;
+}
+
+.goldenButton:hover {
+    opacity: 1;
+    background-color: #ffd700;
+    color: black;
+}
