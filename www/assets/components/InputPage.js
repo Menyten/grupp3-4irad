@@ -23,8 +23,6 @@ class InputPage extends Component {
       this.playerTwo = new Player(p2.val(), playerTwoType);
     }
 
-    /* this.game.createBoard(); */
-
   }
 
   startGame() {
