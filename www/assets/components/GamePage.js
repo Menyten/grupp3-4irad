@@ -5,6 +5,7 @@ class GamePage extends Component {
     this.addEvents({ 'click #quit-game': 'newInput' });
     this.addEvents({ 'click #to-startpage': 'newInput' });
     this.inputPage = new InputPage(this);
+    this.modals = new Modals(this);
     this.game = new Board(this);
     this.activeGame = false;
   }
@@ -20,4 +21,8 @@ class GamePage extends Component {
   newInput() {
     this.activeGame = false;
   }
+
+  
+
 }
+  
