@@ -1,4 +1,5 @@
 <section class="${this.activeGame ? 'row' : '' }">
+    <!-- <a href="/new-game" role="button" class="btn btn-danger return">Cancel / Return</a> -->
 
   <section class="${this.activeGame ? 'game-board col-10' : '' }">
     ${this.activeGame ? this.game : ''}
@@ -8,7 +9,7 @@
 
   ${!this.activeGame ? `` : `<section class="row">
     <section class="col-12 mt-5">
-      <a href="/new-game" id="quit-game" class="btn btn-secondary" role="button" aria-pressed="true">Avbryt</a>
+      <a href="/new-game" id="quit-game" class="btn btn-danger showNavFoot" role="button" aria-pressed="true">Avbryt</a>
     </section>
   </section>`}
 

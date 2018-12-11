@@ -28,5 +28,8 @@ class InputPage extends Component {
   startGame() {
     this.getInput();
     this.playPage.newGame(this.playerOne, this.playerTwo);
+    $('footer').hide();
+    $('nav').hide();
+    $('.return').show();
   }
 }
