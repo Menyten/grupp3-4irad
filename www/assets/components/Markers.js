@@ -6,13 +6,23 @@ class Markers extends Component {
     this.col = col;
     this.color = color;
 
-    this.colorRed=true;
-
+    this.colorRed=false;
+    this.colorBlue=false;
+    this.decideColor();
   }
 
-  hello(){
+  decideColor(){
 
-    alert('hejjj');
+    //alert('hejjj');
+    if(this.color=='red'){
+      this.colorRed=true;
+      this.colorBlue=false;
+    }
+    else if(this.color=='blue'){
+      this.colorRed=false;
+      this.colorBlue=true;
+    }
+
   }
 
   
