@@ -34,8 +34,4 @@ class InputPage extends Component {
     $('nav').hide();
     $('.return').show();
   }
-  // returnToInputPage() {
-  //   $('footer').show();
-  //   $('nav').show();
-  // }
 }

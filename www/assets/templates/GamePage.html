@@ -1,13 +1,12 @@
 <section>
+  <!-- <a href="/new-game" role="button" class="btn btn-danger return">Cancel / Return</a> -->
   <section class="${this.activeGame ? 'game-board' : '' }">
     ${this.activeGame ? this.game : ''}
     ${!this.activeGame ? this.inputPage : ''}
   </section>
   ${this.activeGame ? `<section class="row">
     <section class="col-12 mt-5">
-      <a href="/new-game" id="quit-game" class="btn btn-secondary" role="button" aria-pressed="true">Avbryt</a>
+      <a href="/new-game" id="quit-game" class="btn btn-danger return" role="button" aria-pressed="true">Avbryt</a>
     </section>
   </section>` : ``}
-
 </section>
-  <a href="/new-game" role="button" class="btn btn-danger return">Cancel / Return</a>
