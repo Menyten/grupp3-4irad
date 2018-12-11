@@ -23,7 +23,6 @@ class App extends Component {
       return html;
     }
     Array.prototype.toString = Array.prototype.render;
-    console.log('I added render methods to arrays!')
   }
  
 }

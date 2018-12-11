@@ -20,6 +20,7 @@ class Marker extends Component {
     const innerDiv = this.baseEl.find(`.player-${this.player}`);
     innerDiv.removeClass('animate');
     // then the function self-destructs to avoid running again
+    // (the component only attempts to run this.mounted if it is truthy)
     this.mounted = '';
   }
 }

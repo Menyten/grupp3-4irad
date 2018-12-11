@@ -41,9 +41,11 @@ class Component {
     // add the instance id
     elements.attr('data-instance-id', this._id);
     // add the mounted lifecycle hook
-    setTimeout(() => {
-      this.mounted && this.mounted();
-    }, 0);
+    if (typeof this.mounted === 'function') {
+      setTimeout(() => {
+        this.mounted();
+      }, 0);
+    }
     // return as a string
     return elements[0].outerHTML;
   }
