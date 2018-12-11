@@ -23,13 +23,21 @@ class InputPage extends Component {
       this.playerTwo = new Player(p2.val(), playerTwoType);
     }
 
-  }
+    // if (p1.val().length <= 2 || p1.val().length >= 10) {
+    //   $('.characterAlert').show();
+    // }
+    // if (p2.val().length >= 2 || p2.val().length <= 10) {
+    //   $('.characterAlert').show();
+    // }
 
+  }
+  
   startGame() {
     this.getInput();
     this.playPage.newGame(this.playerOne, this.playerTwo);
     $('footer').hide();
     $('nav').hide();
     $('.return').show();
+
   }
 }
