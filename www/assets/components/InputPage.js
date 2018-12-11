@@ -6,6 +6,7 @@ class InputPage extends Component {
     this.playerOne;
     this.playerTwo;
   }
+  
   getInput() {
 
     const p1 = $('#player1-name');
