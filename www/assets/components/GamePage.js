@@ -6,6 +6,7 @@ class GamePage extends Component {
     this.addEvents({ 'click #to-startpage': 'newInput' });
     this.addEvents({'click .showNavFoot': 'showNavFoot'});
     this.inputPage = new InputPage(this);
+    this.modals = new Modals(this);
     this.game = new Board(this);
     this.activeGame = false;
   }
@@ -20,6 +21,8 @@ class GamePage extends Component {
     this.activeGame = false;
   }
 
+}
+  
   get playerOneName() {
     //Getter for player one name stuff
     return this.inputPage.playerOne.name;
@@ -37,3 +40,4 @@ class GamePage extends Component {
     $('.return').hide();
   }
 }
+
