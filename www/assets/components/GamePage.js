@@ -4,6 +4,7 @@ class GamePage extends Component {
     this.addRoute('/new-game', 'New Game');
     this.addEvents({ 'click #quit-game': 'newInput' });
     this.addEvents({ 'click #to-startpage': 'newInput' });
+    this.addEvents({'click .showNavFoot': 'showNavFoot'});
     this.inputPage = new InputPage(this);
     this.modals = new Modals(this);
     this.game = new Board(this);
@@ -11,10 +12,8 @@ class GamePage extends Component {
   }
 
   newGame(playerOne, playerTwo) {
-    console.log(playerOne);
-    console.log(playerTwo);
     this.activeGame = true;
-    this.game = new Board(this).createBoard();
+    this.game = new Board(this);
     this.render();
   }
 
@@ -22,7 +21,23 @@ class GamePage extends Component {
     this.activeGame = false;
   }
 
-  
-
 }
   
+  get playerOneName() {
+    //Getter for player one name stuff
+    return this.inputPage.playerOne.name;
+  }
+  
+  get playerTwoName() {
+    //Getter for player two name stuff
+    return this.inputPage.playerTwo.name;
+  }
+  
+  showNavFoot(){
+    // this.activeGame = false;
+    $('footer').show();
+    $('nav').show();
+    $('.return').hide();
+  }
+}
+
