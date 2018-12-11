@@ -1,5 +1,0 @@
-class GameEngine {
-    constructor(){
-        
-    }
-}
