@@ -8,6 +8,7 @@ class Board extends Component {
     this.createColumns();
     this.playPage = playPage;
     this.playerTurn = Math.floor((Math.random() * 2) + 1);
+    this.focusPlayer();
   }
 
   createColumns() {
@@ -22,10 +23,21 @@ class Board extends Component {
   changeTurn(){
     if(this.playerTurn==1){
       this.playerTurn=2;
+      $('#player1').addClass('active-player');
+      $('#player2').removeClass('active-player');
+      alert(this.playerTurn);
     }
     else if(this.playerTurn==2){
       this.playerTurn=1;
+      $('#player2').addClass('active-player');
+      $('#player1').removeClass('active-player');
+      alert(this.playerTurn);
     }   
+  }
+
+  focusPlayer(){
+    alert(this.playerTurn);
+    $('#player'+this.playerTurn).addClass('active-player');
   }
 
 
