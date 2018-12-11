@@ -20,8 +20,6 @@ class GamePage extends Component {
   newInput() {
     this.activeGame = false;
   }
-
-}
   
   get playerOneName() {
     //Getter for player one name stuff
