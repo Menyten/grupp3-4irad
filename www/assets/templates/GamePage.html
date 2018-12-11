@@ -1,15 +1,25 @@
 <section class="${this.activeGame ? 'row' : '' }">
 
-  <section class="${this.activeGame ? 'game-board col-10' : '' }">
+  ${!this.activeGame ? '' : `
+  <section class="col-6 player text-center">
+    <p id="player1" class="active-player">${this.playerOneName}</p>
+  </section>
+  <section class="col-6 player text-center">
+    <p id="player2">${this.playerTwoName}</p>
+  </section>
+  `}
+
+  <section class="${this.activeGame ? 'mt-2 col-12' : '' }">
     ${this.activeGame ? this.game : ''}
     ${!this.activeGame ? this.inputPage : ''}
   </section>
-  ${!this.activeGame ? '' : `<section class="col-2"><p>Spelare 1 ${this.playerOneName}</p><p>Spelare 2 ${this.playerTwoName}</p></section>`}
 
-  ${!this.activeGame ? `` : `<section class="row">
+  ${!this.activeGame ? `` : `
+  <section class="row">
     <section class="col-12 mt-5">
       <a href="/new-game" id="quit-game" class="btn btn-secondary" role="button" aria-pressed="true">Avbryt</a>
     </section>
-  </section>`}
+  </section>
+  `}
 
 </section>
