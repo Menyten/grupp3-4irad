@@ -3,10 +3,21 @@
     height: 515px;
 }
 
-.modal-body {
+.victoryImage {
     background-image: url(https://images-na.ssl-images-amazon.com/images/I/913kQUZlZyL._SX425_.jpg);
     background-size: cover;
     
+}
+
+.losingImage {
+    background-image: url(https://moonfireprojekt.files.wordpress.com/2014/12/krakenyps.jpg?w=549);
+    background-size: cover;
+    
+}
+
+.drawImage {
+    background-image: url(https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2018/02/sea-of-thieves-kraken.jpg?itok=BMpvJZZe);
+    background-size: cover;
 }
 
 .modal-body img {
@@ -21,7 +32,7 @@
     border-top: 0px;
 }
 
-.goldenButton {
+.restartButton {
     background-color: #ffd700;
     color: black;
     border-color: black;

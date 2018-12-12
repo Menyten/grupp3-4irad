@@ -2,10 +2,29 @@ class InputPage extends Component {
   constructor(playPage) {
     super();
     this.addEvents({ 'click #start-game': 'startGame' });
+    this.addEvents({'keyup .player-name': 'validateUsers'});
     this.playPage = playPage;
     this.playerOne;
     this.playerTwo;
+    this.playersValidated = false;
   }
+  
+  getValidationStatus(){
+    return this.playersValidated;
+  }
+
+
+  validateUsers(){
+    const valRes = 0 + this.validateName($('#player1-name').val()) + this.validateName($('#player2-name').val());
+    if (valRes === 2) {
+      $('.inputButton').prop("disabled", false)
+    }
+  }
+
+  validateName (name) {
+    return name.length >= 2 && name.length <= 10
+  };
+
   getInput() {
 
     const p1 = $('#player1-name');
