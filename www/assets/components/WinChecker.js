@@ -35,7 +35,27 @@ class WinChecker {
   }
 
   checkForVerticalWin(columns) {
-
+    // loop through all columns:
+    for (let i = 0; i <= 6; i++) {
+      // if there less than four markers, move on to the next
+      if (columns[i].markers.length < 4) {
+        continue
+      }
+      // else check four in a row from bottom to top, as many times as needed
+      for (let j = 0; j < columns[i].markers.length -3; j++) {
+        if (
+          columns[i].markers[j].player === columns[i].markers[j+1].player
+          && columns[i].markers[j].player === columns[i].markers[j+2].player
+          && columns[i].markers[j].player === columns[i].markers[j+3].player
+        ) {
+          return {
+            winner: columns[i].markers[j].player,
+            markers: [[i, j], [i, j+1], [i, j+2], [i, j+3]],
+            type: 'vertical'
+          }
+        }
+      }
+    }
   }
 
   checkForDiagonalWin(columns) {
