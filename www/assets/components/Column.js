@@ -12,7 +12,8 @@ class Column extends Component {
 
   createMarker(){
 
-      this.board.changeTurn();
+    this.board.changeTurn();
+    
     // some simple validation to prevent playing on full columns
     // at the moment it just does nothing if the colum is full, no error messages etc
     if (this.markers && this.markers.length < 6) {
@@ -20,6 +21,8 @@ class Column extends Component {
       this.render();
       // when the game engine knows which player is playing we should also tell the marker which player it belongs to
     }
+
+    
   }
 
   renderEmptySlots() {

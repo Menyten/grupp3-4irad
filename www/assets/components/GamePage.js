@@ -13,6 +13,7 @@ class GamePage extends Component {
   newGame(playerOne, playerTwo) {
     this.activeGame = true;
     this.game = new Board(this);
+    this.game.focusPlayer();
     this.render();
   }
 
@@ -36,4 +37,6 @@ class GamePage extends Component {
     $('nav').show();
     $('.return').hide();
   }
+
+
 }
