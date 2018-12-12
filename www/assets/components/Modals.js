@@ -1,7 +1,7 @@
 class Modals extends Component {
     constructor(parent) {
         super();
-        this.victoryModal();
+        //this.victoryModal();
         //this.loserModal()
         //this.drawModal()
         this.parent = parent;
