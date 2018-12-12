@@ -10,16 +10,20 @@ class Column extends Component {
     });
   }
 
-  createMarker(){
-
-    this.board.changeTurn();
-    
+  createMarker(){    
     // some simple validation to prevent playing on full columns
     // at the moment it just does nothing if the colum is full, no error messages etc
     if (this.markers && this.markers.length < 6) {
+      this.board.changeTurn();
       this.markers.push(new Marker(this.board.playerTurn));
       this.render();
-      // when the game engine knows which player is playing we should also tell the marker which player it belongs to
+      const potentialWin = this.board.winChecker.checkForWin(this.board.columns)
+      if (potentialWin) {
+        // in here we do whatever it is we wanna do when someone wins
+        console.log('We have a winner!');
+        console.log(potentialWin);
+        
+      }
     }
 
     
