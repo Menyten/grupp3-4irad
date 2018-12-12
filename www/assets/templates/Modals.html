@@ -1,39 +1,16 @@
-<div class="modals">
-    <div class="modalIfWin" tabindex="-1" role="dialog">
+  <div class="modal">
+    <div class="modalWin" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Lorem Ipsum</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                <div class="modal-header mx-auto">
+                    <h5 class="modal-title">${this.title}</h5>
                 </div>
                 <div class="modal-body">
                     <p></p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Spela igen</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Gå tillbaka</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modalIFLoseOrDraw" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Lorem Ipsum</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p></p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Spela igen</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Gå tillbaka</button>
+                    <button type="button" class="btn btn-primary restartButton">Spela igen</button>
+                    <a href="/new-game" id="quit-game" class="btn btn-secondary" data-dismiss="modal" role="button" aria-pressed="true">Gå tillbaka</a>
                 </div>
             </div>
         </div>
