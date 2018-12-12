@@ -3,7 +3,7 @@ class Marker extends Component {
     super();    
     // we later want to replace this with either player one or two, when the game engine knows which player is playing
     this.player = player;
-    this.player = 1;
+    
 
     // start a count for the amount of markers, if there is none already
     Marker.count = Marker.count || 0;
