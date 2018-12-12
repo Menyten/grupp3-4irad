@@ -24,7 +24,6 @@ class Column extends Component {
         console.log(potentialWin);
         
       }
-      // when the game engine knows which player is playing we should also tell the marker which player it belongs to
     }
 
     
