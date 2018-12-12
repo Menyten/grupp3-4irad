@@ -43,7 +43,6 @@ class Component {
     // add the mounted lifecycle hook
     if (typeof this.mounted === 'function') {
       setTimeout(() => {
-        console.log(this)
         this.mounted();
       }, 0);
     }
