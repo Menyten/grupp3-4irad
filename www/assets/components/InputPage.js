@@ -2,6 +2,7 @@ class InputPage extends Component {
   constructor(playPage) {
     super();
     this.addEvents({ 'click #start-game': 'startGame' });
+    this.addEvents({ 'click .close': 'hideAlert'})
     this.playPage = playPage;
     this.playerOne;
     this.playerTwo;
@@ -23,15 +24,19 @@ class InputPage extends Component {
       this.playerTwo = new Player(p2.val(), playerTwoType);
     }
 
-    // if (p1.val().length <= 2 || p1.val().length >= 10) {
-    //   $('.characterAlert').show();
-    // }
-    // if (p2.val().length >= 2 || p2.val().length <= 10) {
-    //   $('.characterAlert').show();
-    // }
-
+    //show alert box
+    if (playerOne === false) {
+      $(".characterAlert").show();
+    }
+    if (playerTwo === false) {
+      $(".characterAlert").show();
+    }
   }
-  
+
+  hideAlert(){
+    $('.characterAlert').hide();
+  }
+
   startGame() {
     this.getInput();
     this.playPage.newGame(this.playerOne, this.playerTwo);
