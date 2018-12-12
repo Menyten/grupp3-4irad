@@ -1,22 +1,28 @@
 class Column extends Component {
-  constructor(columnWidth, index) {
+  constructor(columnWidth, index, board) {
     super();
     this.index = index
     this.markers = [];
     this.columnWidth = columnWidth;
+    this.board = board;
     this.addEvents({
       'click': 'createMarker',
     });
   }
 
   createMarker(){
+
+    this.board.changeTurn();
+    
     // some simple validation to prevent playing on full columns
     // at the moment it just does nothing if the colum is full, no error messages etc
     if (this.markers && this.markers.length < 6) {
-      this.markers.push(new Marker());
+      this.markers.push(new Marker(this.board.playerTurn));
       this.render();
       // when the game engine knows which player is playing we should also tell the marker which player it belongs to
     }
+
+    
   }
 
   renderEmptySlots() {
