@@ -5,7 +5,7 @@ class WinChecker {
     potentialWin = this.checkForVerticalWin(columns);
     if (potentialWin) { return potentialWin }
     potentialWin = this.checkForDiagonalWin(columns);
-    return potentialWin
+    return potentialWin;
   }
 
   checkForHorizontalWin(columns) {
