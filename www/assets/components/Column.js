@@ -24,7 +24,7 @@ class Column extends Component {
         App.modals.victoryModal();      
       }
       if (this.board.drawChecker.checkDraws(this.board.columns)) {
-        console.log('Its a draw! Well played')
+        App.modals.drawModal();
       }
     }
 
