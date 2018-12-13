@@ -42,6 +42,7 @@ class Modals extends Component {
 
     drawModal() {
         this.title = "Det slutade lika";
+        this.winnerName = '';
         $(document).ready(function () {
             $('.modal-body').addClass('drawImage');
         });
