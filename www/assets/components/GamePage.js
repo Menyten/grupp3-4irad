@@ -15,21 +15,13 @@ class GamePage extends Component {
 
   newGame(playerOne, playerTwo) {
     this.activeGame = true;
-    this.game = new Board(this);
+    this.game = new Board(this, playerOne, playerTwo);
     this.game.focusPlayer();
     this.render();
   }
 
   newInput() {
     this.activeGame = false;
-  }
-
-  get playerOneName() {
-    return this.inputPage.playerOne.name;
-  }
-  
-  get playerTwoName() {
-    return this.inputPage.playerTwo.name;
   }
   
   showNavFoot(){

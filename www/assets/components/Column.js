@@ -7,8 +7,18 @@ class Column extends Component {
     this.board = board;
     //this.modals = new Modals();
     this.addEvents({
-      'click': 'createMarker',
+      'click': 'validateMove',
     });
+  }
+
+  validateMove() {
+    if (this.board.playerTurn === 1 && this.board.player1.type === 'human') {
+      return this.createMarker();
+    }
+
+    if (this.board.playerTurn === 2 && this.board.player2.type === 'human') {
+      return this.createMarker();
+    }
   }
 
   createMarker(){    
@@ -18,22 +28,26 @@ class Column extends Component {
     // some simple validation to prevent playing on full columns
     // at the moment it just does nothing if the colum is full, no error messages etc
     if (this.markers && this.markers.length < 6) {
-      this.board.changeTurn();
       this.markers.push(new Marker(this.board.playerTurn));
       this.render();
-      const potentialWin = this.board.winChecker.checkForWin(this.board.columns);
-      if (potentialWin) {
-        // in here we do whatever it is we wanna do when someone wins
-        let winnerName = potentialWin.winner === 1 ? App.gamePage.playerOneName : App.gamePage.playerTwoName;
-        this.board.gameEnded = true;
-        App.modals.victoryModal(winnerName);      
-      }
-      if (this.board.drawChecker.checkDraws(this.board.columns)) {
-        App.modals.drawModal();
-      }
+      this.checkForWinOrDraw();
+      this.board.changeTurn();
+    }    
+  }
+  
+  checkForWinOrDraw() {
+    const potentialWin = this.board.winChecker.checkForWin(this.board.columns);
+    if (potentialWin) {
+      // in here we do whatever it is we wanna do when someone wins
+      let winnerName = potentialWin.winner === 1 ? this.board.player1.name : this.board.player2.name;
+      this.board.gameEnded = true;
+      App.modals.victoryModal(winnerName);      
+    }
+    if (this.board.drawChecker.checkDraws(this.board.columns)) {
+      this.board.gameEnded = true;
+      App.modals.drawModal();
     }
 
-    
   }
 
   renderEmptySlots() {
