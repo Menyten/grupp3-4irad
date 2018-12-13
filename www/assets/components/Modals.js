@@ -1,25 +1,25 @@
 class Modals extends Component {
     constructor(parent) {
         super();
-        //this.victoryModal();
-        //this.loserModal()
-        //this.drawModal()
         this.parent = parent;
         this.addEvents({
             'click .restartButton': 'restartGame'
         })
+
         
     }
 
     restartGame(){
         this.parent.newGame();
+        $('.modal').hide();
     }
 
     show() {
         this.render();
         setTimeout(() => {
             this.baseEl.modal('show');
-        }, 0);
+
+        }, 1000);
     }
 
     victoryModal() {

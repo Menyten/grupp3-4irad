@@ -22,6 +22,8 @@ class Marker extends Component {
     innerDiv.removeClass('animate');
     // then the function self-destructs to avoid running again
     // (the component only attempts to run this.mounted if it is truthy)
-    this.mounted = '';
+    setTimeout(() => {
+      this.mounted = '';
+    }, 0)
   }
 }
