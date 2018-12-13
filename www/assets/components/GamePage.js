@@ -5,7 +5,6 @@ class GamePage extends Component {
     this.addEvents({ 'click #quit-game': 'newInput' });
     this.addEvents({ 'click #to-startpage': 'newInput' });
     this.addEvents({'click .showNavFoot': 'showNavFoot'});
-    console.log("I am GamePage and I am constructed with the id", this._id)
     this.modals = new Modals(this);
     App.modals = this.modals;
     this.inputPage = new InputPage(this);

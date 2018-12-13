@@ -21,8 +21,6 @@ class Column extends Component {
       const potentialWin = this.board.winChecker.checkForWin(this.board.columns)
       if (potentialWin) {
         // in here we do whatever it is we wanna do when someone wins
-        console.log('We have a winner!');
-        console.log(potentialWin);
         App.modals.victoryModal();      
       }
     }
