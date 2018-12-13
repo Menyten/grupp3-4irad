@@ -10,7 +10,7 @@ class Modals extends Component {
     }
 
     restartGame(){
-        this.parent.newGame();
+        this.parent.newGame(this.parent.game.player1, this.parent.game.player2);
         $('.modal').hide();
     }
 

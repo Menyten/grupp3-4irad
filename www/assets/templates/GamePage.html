@@ -3,10 +3,10 @@
 
   ${!this.activeGame ? '' : `
   <section class="col-6 player text-center">
-    <p id="player1">${this.playerOneName}</p>
+    <p id="player1">${this.game.player1.name}</p>
   </section>
   <section class="col-6 player text-center">
-    <p id="player2">${this.playerTwoName}</p>
+    <p id="player2">${this.game.player2.name}</p>
   </section>
   `}
 
