@@ -11,22 +11,25 @@ class Column extends Component {
     });
   }
 
-  createMarker(){   
-    // do not allow new moves if the game is over 
+  createMarker(){    
     if (this.board.gameEnded) {
-      return
-    }
+     return
+   }
     // some simple validation to prevent playing on full columns
     // at the moment it just does nothing if the colum is full, no error messages etc
     if (this.markers && this.markers.length < 6) {
       this.board.changeTurn();
       this.markers.push(new Marker(this.board.playerTurn));
       this.render();
-      const potentialWin = this.board.winChecker.checkForWin(this.board.columns)
+      const potentialWin = this.board.winChecker.checkForWin(this.board.columns);
       if (potentialWin) {
         // in here we do whatever it is we wanna do when someone wins
+        let winnerName = potentialWin.winner === 1 ? App.gamePage.playerOneName : App.gamePage.playerTwoName;
         this.board.gameEnded = true;
-        App.modals.victoryModal();      
+        App.modals.victoryModal(winnerName);      
+      }
+      if (this.board.drawChecker.checkDraws(this.board.columns)) {
+        App.modals.drawModal();
       }
     }
 
@@ -51,5 +54,4 @@ class Column extends Component {
     }, 0);
   }
 
-  
 }

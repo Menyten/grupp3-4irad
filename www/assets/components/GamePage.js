@@ -7,6 +7,7 @@ class GamePage extends Component {
     this.addEvents({'click .showNavFoot': 'showNavFoot'});
     this.modals = new Modals(this);
     App.modals = this.modals;
+    App.gamePage = this;
     this.inputPage = new InputPage(this);
     this.game = new Board(this);
     this.activeGame = false;
