@@ -11,7 +11,11 @@ class Column extends Component {
     });
   }
 
-  createMarker(){    
+  createMarker(){   
+    // do not allow new moves if the game is over 
+    if (this.board.gameEnded) {
+      return
+    }
     // some simple validation to prevent playing on full columns
     // at the moment it just does nothing if the colum is full, no error messages etc
     if (this.markers && this.markers.length < 6) {
@@ -21,6 +25,7 @@ class Column extends Component {
       const potentialWin = this.board.winChecker.checkForWin(this.board.columns)
       if (potentialWin) {
         // in here we do whatever it is we wanna do when someone wins
+        this.board.gameEnded = true;
         App.modals.victoryModal();      
       }
     }
