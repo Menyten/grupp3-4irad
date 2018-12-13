@@ -1,6 +1,7 @@
 class Modals extends Component {
     constructor(parent) {
         super();
+        console.log("I am Modals and I am constructed with id", this._id)
         //this.victoryModal();
         //this.loserModal()
         //this.drawModal()
@@ -13,13 +14,16 @@ class Modals extends Component {
 
     restartGame(){
         this.parent.newGame();
+        $('.modal').hide();
     }
 
     show() {
         this.render();
         setTimeout(() => {
+            console.log(this._id)
             this.baseEl.modal('show');
-        }, 0);
+
+        }, 1000);
     }
 
     victoryModal() {

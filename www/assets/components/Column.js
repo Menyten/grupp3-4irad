@@ -5,7 +5,7 @@ class Column extends Component {
     this.markers = [];
     this.columnWidth = columnWidth;
     this.board = board;
-    this.modals = new Modals();
+    //this.modals = new Modals();
     this.addEvents({
       'click': 'createMarker',
     });
@@ -23,9 +23,7 @@ class Column extends Component {
         // in here we do whatever it is we wanna do when someone wins
         console.log('We have a winner!');
         console.log(potentialWin);
-        this.modals.victoryModal();
-        this.show();
-        
+        App.modals.victoryModal();      
       }
     }
 
