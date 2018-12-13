@@ -18,10 +18,13 @@ class Column extends Component {
       this.board.changeTurn();
       this.markers.push(new Marker(this.board.playerTurn));
       this.render();
-      const potentialWin = this.board.winChecker.checkForWin(this.board.columns)
+      const potentialWin = this.board.winChecker.checkForWin(this.board.columns);
       if (potentialWin) {
         // in here we do whatever it is we wanna do when someone wins
         App.modals.victoryModal();      
+      }
+      if (this.board.drawChecker.checkDraws(this.board.columns)) {
+        console.log('Its a draw! Well played')
       }
     }
 
