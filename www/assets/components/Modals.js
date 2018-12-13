@@ -22,8 +22,9 @@ class Modals extends Component {
         }, 1000);
     }
 
-    victoryModal() {
+    victoryModal(winnerName) {
         this.title = "Grattis!  ";
+        this.winnerName = winnerName;
         $(document).ready(function () {
             $('.modal-body').addClass('victoryImage');
         });

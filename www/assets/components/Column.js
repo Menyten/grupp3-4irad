@@ -21,7 +21,8 @@ class Column extends Component {
       const potentialWin = this.board.winChecker.checkForWin(this.board.columns);
       if (potentialWin) {
         // in here we do whatever it is we wanna do when someone wins
-        App.modals.victoryModal();      
+        let winnerName = potentialWin.winner === 1 ? App.gamePage.playerOneName : App.gamePage.playerTwoName;
+        App.modals.victoryModal(winnerName);      
       }
       if (this.board.drawChecker.checkDraws(this.board.columns)) {
         App.modals.drawModal();
