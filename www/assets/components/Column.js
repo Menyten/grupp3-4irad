@@ -22,7 +22,7 @@ class Column extends Component {
       console.log(potentialWin)
       if (potentialWin) {
         // in here we do whatever it is we wanna do when someone wins
-        let winnerName = potentialWin === 1 ? App.gamePage.playerOneName : App.gamePage.playerTwoName;
+        let winnerName = potentialWin.winner === 1 ? App.gamePage.playerOneName : App.gamePage.playerTwoName;
         App.modals.victoryModal(winnerName);      
       }
     }
