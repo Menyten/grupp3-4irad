@@ -9,7 +9,10 @@ class Board extends Component {
     this.playPage = playPage;
     this.playerTurn = Math.floor((Math.random() * 2) + 1);  
     this.winChecker = new WinChecker(); 
+
+    this.gameEnded = false;
     this.drawChecker = new DrawChecker();
+
   }
 
   createColumns() {

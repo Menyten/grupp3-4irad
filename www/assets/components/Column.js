@@ -12,6 +12,9 @@ class Column extends Component {
   }
 
   createMarker(){    
+    if (this.board.gameEnded) {
+     return
+   }
     // some simple validation to prevent playing on full columns
     // at the moment it just does nothing if the colum is full, no error messages etc
     if (this.markers && this.markers.length < 6) {
@@ -22,6 +25,7 @@ class Column extends Component {
       if (potentialWin) {
         // in here we do whatever it is we wanna do when someone wins
         let winnerName = potentialWin.winner === 1 ? App.gamePage.playerOneName : App.gamePage.playerTwoName;
+        this.board.gameEnded = true;
         App.modals.victoryModal(winnerName);      
       }
       if (this.board.drawChecker.checkDraws(this.board.columns)) {
@@ -50,5 +54,4 @@ class Column extends Component {
     }, 0);
   }
 
-  
 }
