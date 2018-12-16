@@ -1,52 +1,66 @@
-.my-input-page-container{
-
+.my-inputpage-container{
     //border:solid black 10px;
     font-family: 'Pirata One', cursive;
-    margin-top:50px;
-    
+    margin-top:50px;   
 }
 
-.my-input-page-row-1{
-
+.my-inputpage-row1{
     //border:solid black 3px;
-    margin-top:10px;
 }
+    .my-formgroup-player1{
+        // border:solid black 1px;
+        text-align: center;
+    }
+    .player-name-header{
+        font-size:200%;   
+    }
+    .player-name{
+        width:70%;
+        margin:auto;
+    }
+    .player1-img-section{
+
+    }
+    .pirate1-img,.pirate2-img,.pirate3-img,.piratebot-img{
+        margin-top:20px;
+        cursor:pointer;
+        opacity:0.2;
+        border-radius:50px;
+    }
+    .pirate1-img:hover,.pirate2-img:hover,.pirate3-img:hover,.piratebot-img:hover{
+        opacity:1;
+    }
+    .pirate1-img.active,.pirate2-img.active,.pirate3-img.active,.piratebot-img.active{
+        opacity:1;
+    }
+    .piratebot-img{
+        padding-left:50px;
+    }
 
 
-.my-form-group-player1{
-
-padding-left:50%;
-text-align: center;
-
-}
-.my-players-name{
-
-    font-size:200%;
-    
-}
 
 
-.my-pirate-icons-box{
 
-    //border:solid red 1px;
+.my-inputpage-row2{
+    //border:solid black 3px;
     margin-top:30px;
 }
-.humans-section{
-    //border:solid black 1px;
-}
-.humans-section img{
-    width:70px;
-    height:70px;
-    border-radius:50px;
-}
-.bot-section{
-    //border:solid black 1px;
-}
-.bot-section img{
-    width:70px;
-    height:70px;
-    border-radius:50px;
-}
+    .my-formgroup-player2{
+        // border:solid black 1px;
+        text-align: center;
+    }
+
+
+
+
+
+
+
+
+
+
+    
+
 
 
 

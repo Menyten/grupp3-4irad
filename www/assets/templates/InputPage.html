@@ -1,84 +1,49 @@
-<section class="my-input-page-container">
-  <section class="row my-input-page-row-1">
+<section class="my-inputpage-container">
 
-    <section class="col-8">
-      <div class="form-group my-form-group-player1">
-        <label for="player-name" class="my-players-name">Spelare 1:</label>
+  <section class="row my-inputpage-row1">
+
+    <section class="col-4">
+      <!--Empty Section-->
+    </section>
+
+    <section class="col-4">
+      <div class="form-group my-formgroup-player1">
+        <label for="player-name" class="player-name-header">Spelare 1</label>
         <input type="text" class="form-control player-name" id="player1-name" placeholder="Skriv spelarens namn">
       </div>
     </section>
-
-    <section class="col-4 my-pirate-icons-box">
-      <div class="row">
-        <div class="col-9 humans-section">
-          <img src="/assets/img/pirates/pirat4.jpg">
-          <img src="/assets/img/pirates/pirat5.jpg">
-          <img src="/assets/img/pirates/pirat6.jpg">
-        </div>
-        <div class="col-3 bot-section">
-          <img src="/assets/img/pirates/pirate-bot.jpg">
-        </div>
-      </div>
+   
+    <section class="col-4 player1-img-section">    
+          <img src="/assets/img/pirates/pirate1.jpg" class="pirate1-img active">
+          <img src="/assets/img/pirates/pirate2.jpg" class="pirate2-img">
+          <img src="/assets/img/pirates/pirate3.jpg" class="pirate3-img">
+          <img src="/assets/img/pirates/pirate-bot.jpg" class="piratebot-img">       
     </section>
-
-    <!--
-    <section class="col-4">
-      <div class="form-group">
-        <label for="type-of-player">Typ</label>
-        <select class="form-control" id="type-of-player1">
-          <option value="human">Spelare</option>
-          <option value="computer">Dator</option>
-        </select>
-      </div>
-    </section>-->
-
+    
   </section>
 
-  <section class="row my-input-page-row-1">
+  
+  <section class="row my-inputpage-row2">
 
-    <section class="col-8">
-      <div class="form-group my-form-group-player1">
-        <label for="player-name" class="my-players-name">Spelare 2:</label>
-        <input type="text" class="form-control player-name" id="player1-name" placeholder="Skriv spelarens namn">
-      </div>
-    </section>
-
-    <section class="col-4 my-pirate-icons-box">
-      <div class="row">
-        <div class="col-9 humans-section">
-          <img src="/assets/img/pirates/pirat4.jpg">
-          <img src="/assets/img/pirates/pirat5.jpg">
-          <img src="/assets/img/pirates/pirat6.jpg">
-        </div>
-        <div class="col-3 bot-section">
-          <img src="/assets/img/pirates/pirate-bot.jpg">
-        </div>
-      </div>
-    </section>
-
-    <!--
     <section class="col-4">
-      <div class="form-group">
-        <label for="type-of-player">Typ</label>
-        <select class="form-control" id="type-of-player1">
-          <option value="human">Spelare</option>
-          <option value="computer">Dator</option>
-        </select>
-      </div>
-    </section>-->
+      <!--Empty Section-->
+    </section>
 
-  </section>
-
-  <!--
-  <section class="row">
-
-    <section class="col-6">
-      <div class="form-group">
-        <label for="player2-name">Spelare 2:</label>
+    <section class="col-4">
+      <div class="form-group my-formgroup-player2">
+        <label for="player2-name" class="player-name-header">Spelare 2</label>
         <input type="text" class="form-control player-name" id="player2-name" placeholder="Skriv spelarens namn">  <!-- required pattern=".{2,10}"regEx för max min length -->
-   <!--   </div>
+     </div>
     </section>
 
+    <section class="col-4 player2-img-section">    
+        <img src="/assets/img/pirates/pirate1.jpg" class="pirate1-img">
+        <img src="/assets/img/pirates/pirate2.jpg" class="pirate2-img">
+        <img src="/assets/img/pirates/pirate3.jpg" class="pirate3-img">
+        <img src="/assets/img/pirates/pirate-bot.jpg" class="piratebot-img active">       
+    </section>
+
+    <!--
     <section class="col-6">
       <div class="form-group">
         <label for="type-of-player2">Typ</label>
@@ -88,23 +53,31 @@
         </select>
       </div>
     </section>
+    -->
 
-  </section>-->
+  </section>
+
+
 
   <section class="row start-goback-buttons">
+
+    <!--
       <div class="col-6 go-back-button">
           <img src="/assets/img/pirates/delete-sign.png">
       </div>
     <div class="col-6 start-button">
         <img src="/assets/img/pirates/spela.png">
     </div>
-  
-    <!--
+    -->
+     
     <section class="col-6">
       <a href="/" class="btn btn-danger" role="button" aria-pressed="true">Tillbaka</a>
     </section>
     <section class="col-6">
       <button id="start-game" class="btn btn-primary inputButton" disabled="${this.getValidationStatus()}">Spela</button>
     </section>
-  </section>-->
+
+  </section>
+
+
 </section>
