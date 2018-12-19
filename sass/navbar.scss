@@ -1,0 +1,41 @@
+ .navbar-backgroundColor {
+    background-color: black;
+    -webkit-box-shadow: 1px 19px 28px -8px rgba(210,187,160,0.81);
+    -moz-box-shadow: 1px 19px 28px -8px rgba(210,187,160,0.81);
+    box-shadow: 1px 19px 28px -8px rgba(210,187,160,0.81);
+    
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-family: 'Pirata One', cursive;
+
+    &:hover {
+        color: #d2bba0;
+    }
+
+    &.active {
+        color: #d2bba0;
+    }
+    
+}
+
+
+
+.navbar-light .navbar-brand {
+    color: white;
+} 
+
+.navbar-light .navbar-toggler {
+    border-color: white;
+    background-color: #d2bba0;
+
+    &-icon {
+        background-color: white;
+    }
+}
+
+button:focus {
+    outline-color: white;
+}
+

@@ -3,5 +3,14 @@ footer {
   p {
     padding: 0px;
     margin: 0px; 
+    font-family: 'Pirata One', cursive;
   }
 }
+
+.footer-backgroundColor {
+  background-color: black;
+  -webkit-box-shadow: 4px -9px 13px 5px rgba(210,187,160,0.25);
+  -moz-box-shadow: 4px -9px 13px 5px rgba(210,187,160,0.25);
+  box-shadow: 4px -9px 13px 5px rgba(210,187,160,0.25);
+}
+
