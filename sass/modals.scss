@@ -1,11 +1,17 @@
 .modal-content {
-    width: 600px;
-    height: 515px;
+    width: 464px;
+    height: 604px;
+    -webkit-box-shadow: inset 0px 0px 46px 10px rgba(0,0,0,1);
+    -moz-box-shadow: inset 0px 0px 46px 10px rgba(0,0,0,1);
+    box-shadow: inset 0px 0px 46px 10px rgba(0,0,0,1);
+    background-color: #d2bba0;
+    background-image: url(http://oldduckinn.com/wp-content/uploads/Grungy-Old-Wood-Texture.jpg);
+    background-size: cover;
+
 }
 
 .victoryImage {
-    background-image: url(https://images-na.ssl-images-amazon.com/images/I/913kQUZlZyL._SX425_.jpg);
-    background-size: cover;
+    
     
 }
 
