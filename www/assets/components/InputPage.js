@@ -11,7 +11,10 @@ class InputPage extends Component {
     this.playerOneType ='human';
     this.playerTwoType ='computer';
 
-    this.addEvents({'click .pirate1-img,.pirate2-img,.pirate3-img': 'selectPlayerImg'});
+    this.addEvents({'click .player1-img-section': 'selectPlayer1Img'});
+    this.x;
+    
+    this.playerOneImg;
 
     this.playPage = playPage;
     this.playerOne;
@@ -33,8 +36,15 @@ class InputPage extends Component {
     this.playerTwoType='computer';
   }
 
-  selectPlayerImg(){
-    alert('hej');
+  selectPlayer1Img(event){
+
+    $(this.x).removeClass('active');
+    $(event.target).addClass('active');
+    this.x = event.target;
+
+    this.playerOneImg = event.target.src;
+    console.log(this.playerOneImg);
+
   }
 
 
