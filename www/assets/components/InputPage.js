@@ -4,17 +4,17 @@ class InputPage extends Component {
     this.addEvents({ 'click #start-game': 'startGame' });
     this.addEvents({'keyup .player-name': 'validateUsers'});
 
-    this.addEvents({'click .player1-check-human': 'checkBoxHuman'});
-    this.addEvents({'click .player1-check-computer': 'checkBoxComputer'});
-    this.addEvents({'click .player2-check-human': 'checkBoxHuman2'});
-    this.addEvents({'click .player2-check-computer': 'checkBoxComputer2'});
+    this.addEvents({'click .player1-radiobuttons': 'selectPlayer1Type'});
+    this.addEvents({'click .player2-radiobuttons': 'selectPlayer2Type'});
     this.playerOneType ='human';
     this.playerTwoType ='computer';
 
     this.addEvents({'click .player1-img-section': 'selectPlayer1Img'});
-    this.x;
-    
+    this.player1PreviousTarget; 
     this.playerOneImg;
+    this.addEvents({'click .player2-img-section': 'selectPlayer2Img'});
+    this.player2PreviousTarget; 
+    this.playerTwoImg;
 
     this.playPage = playPage;
     this.playerOne;
@@ -22,41 +22,31 @@ class InputPage extends Component {
     this.playersValidated = false;
   }
 
-  checkBoxHuman(){
-    this.playerOneType='human';
-   // $('.playeronecheckboxuman').prop('checked', false);
+  selectPlayer1Type(event){
+    if($(event.target).hasClass('player1-check-human')){this.playerOneType='human';}
+    else if($(event.target).hasClass('player1-check-computer')){this.playerOneType='computer';}
   }
-  checkBoxComputer(){
-    this.playerOneType='computer';
-  }
-  checkBoxHuman2(){
-    this.playerTwoType='human';
-  }
-  checkBoxComputer2(){
-    this.playerTwoType='computer';
+  selectPlayer2Type(event){
+    if($(event.target).hasClass('player2-check-human')){this.playerTwoType='human';}
+    else if($(event.target).hasClass('player2-check-computer')){this.playerTwoType='computer';}
   }
 
   selectPlayer1Img(event){
-
-    $(this.x).removeClass('active');
+    $(this.player1PreviousTarget).removeClass('active');
     $(event.target).addClass('active');
-    this.x = event.target;
-
+    this.player1PreviousTarget = event.target;
     this.playerOneImg = event.target.src;
-    console.log(this.playerOneImg);
-
   }
-
-
-  
-
-
-
-  
+  selectPlayer2Img(event){
+    $(this.player2PreviousTarget).removeClass('active');
+    $(event.target).addClass('active');
+    this.player2PreviousTarget = event.target;
+    this.playerTwoImg = event.target.src;
+  }
+ 
   getValidationStatus(){
     return this.playersValidated;
   }
-
 
   validateUsers(){
     const valRes = 0 + this.validateName($('#player1-name').val()) + this.validateName($('#player2-name').val());
