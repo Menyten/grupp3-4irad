@@ -4,9 +4,14 @@ class InputPage extends Component {
     this.addEvents({ 'click #start-game': 'startGame' });
     this.addEvents({'keyup .player-name': 'validateUsers'});
 
-    this.addEvents({'click .pirate1-img,.pirate2-img,.pirate3-img': 'selectPlayerType'});
-    this.playerOneType;
-    this.playerTwoType = 'human';
+    this.addEvents({'click .player1-check-human': 'checkBoxHuman'});
+    this.addEvents({'click .player1-check-computer': 'checkBoxComputer'});
+    this.addEvents({'click .player2-check-human': 'checkBoxHuman2'});
+    this.addEvents({'click .player2-check-computer': 'checkBoxComputer2'});
+    this.playerOneType ='human';
+    this.playerTwoType ='computer';
+
+    this.addEvents({'click .pirate1-img,.pirate2-img,.pirate3-img': 'selectPlayerImg'});
 
     this.playPage = playPage;
     this.playerOne;
@@ -14,12 +19,29 @@ class InputPage extends Component {
     this.playersValidated = false;
   }
 
-  selectPlayerType(){
+  checkBoxHuman(){
     this.playerOneType='human';
+   // $('.playeronecheckboxuman').prop('checked', false);
+  }
+  checkBoxComputer(){
+    this.playerOneType='computer';
+  }
+  checkBoxHuman2(){
+    this.playerTwoType='human';
+  }
+  checkBoxComputer2(){
+    this.playerTwoType='computer';
+  }
+
+  selectPlayerImg(){
+    alert('hej');
   }
 
 
   
+
+
+
   
   getValidationStatus(){
     return this.playersValidated;
