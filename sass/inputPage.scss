@@ -20,25 +20,24 @@
         margin:auto;
     }
     .player1-img-section{
-        border:dotted 1px grey;
-        margin-top:10px;
+        //border:dotted 1px grey;
+        margin-top:35px;
         text-align:center;
     }
-    .pirate1-img,.pirate2-img,.pirate3-img,.piratebot-img{
-        margin-top:20px;
+    .pirate1-img,.pirate2-img,.pirate3-img,.pirate4-img{
+   
         cursor:pointer;
-        opacity:0.2;
+        opacity:0.3;
         border-radius:50px;
+        
     }
-    .pirate1-img:hover,.pirate2-img:hover,.pirate3-img:hover,.piratebot-img:hover{
+    .pirate1-img:hover,.pirate2-img:hover,.pirate3-img:hover,.pirate4-img:hover{
         opacity:1;
     }
-    .pirate1-img.active,.pirate2-img.active,.pirate3-img.active,.piratebot-img.active{
+    .pirate1-img.active,.pirate2-img.active,.pirate3-img.active,.pirate4-img.active{
         opacity:1;
     }
-    .piratebot-img{
-        //padding-left:50px;
-    }
+  
 
 
 
@@ -53,8 +52,8 @@
         text-align: center;
     }
     .player2-img-section{
-        border:dotted 1px grey;
-        margin-top:10px;
+        //border:dotted 1px grey;
+        margin-top:35px;
         text-align:center;
     }
 
@@ -73,8 +72,9 @@
 
 
 .start-goback-buttons{
-    //border:solid black 1px;
-    margin-top:60px;
+   // border:solid black 1px;
+    padding-top:50px;
+    margin:auto; 
 }
 .start-button{
     //border:solid black 1px;
