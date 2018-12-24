@@ -10,10 +10,10 @@ class InputPage extends Component {
     this.playerTwoType ='computer';
 
     this.addEvents({'click .player1-img-section': 'selectPlayer1Img'});
-    this.player1PreviousTarget; 
+    this.player1PreviousTarget='.pirate1-img'; 
     this.playerOneImg;
     this.addEvents({'click .player2-img-section': 'selectPlayer2Img'});
-    this.player2PreviousTarget; 
+    this.player2PreviousTarget='.pirate4-img';
     this.playerTwoImg;
 
     this.playPage = playPage;
@@ -21,7 +21,7 @@ class InputPage extends Component {
     this.playerTwo;
     this.playersValidated = false;
   }
-
+  
   selectPlayer1Type(event){
     if($(event.target).hasClass('player1-check-human')){this.playerOneType='human';}
     else if($(event.target).hasClass('player1-check-computer')){this.playerOneType='computer';}
@@ -60,17 +60,10 @@ class InputPage extends Component {
   };
 
   getInput() {
-
     const p1 = $('#player1-name');
     const p2 = $('#player2-name');
     let playerOne = p1.val().length >= 2 && p1.val().length <= 10;
     let playerTwo = p2.val().length >= 2 && p2.val().length <= 10;
-    //const playerOneType = $('#type-of-player1').val();
-    //const playerTwoType = $('#type-of-player2').val();
-
-    //const playerOneType = 'computer';
-    //const playerTwoType = 'human';
-    
 
     if (playerOne === true) {
       this.playerOne = new Player(p1.val(), this.playerOneType);
@@ -78,7 +71,6 @@ class InputPage extends Component {
     if (playerTwo === true) {
       this.playerTwo = new Player(p2.val(), this.playerTwoType);
     }
-
   }
 
   startGame() {
