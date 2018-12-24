@@ -1,5 +1,5 @@
 .my-inputpage-container{
-    //border:solid black 10px;
+    //border:solid red 3px;
     font-family: 'Pirata One', cursive;
     margin-top:50px;   
 }
@@ -24,12 +24,10 @@
         margin-top:35px;
         text-align:center;
     }
-    .pirate1-img,.pirate2-img,.pirate3-img,.pirate4-img{
-   
+    .pirate1-img,.pirate2-img,.pirate3-img,.pirate4-img{  
         cursor:pointer;
         opacity:0.3;
-        border-radius:50px;
-        
+        border-radius:50px;       
     }
     .pirate1-img:hover,.pirate2-img:hover,.pirate3-img:hover,.pirate4-img:hover{
         opacity:1;
@@ -39,13 +37,8 @@
     }
   
 
-
-
-
-
 .my-inputpage-col2{
-    //border:solid black 3px;
-   
+    //border:solid black 3px;  
 }
     .my-formgroup-player2{
         // border:solid black 1px;
@@ -59,43 +52,16 @@
 
 
 
-
-
-
-
-
-
-    
-
-
-
-
-
 .start-goback-buttons{
-   // border:solid black 1px;
+    //border:solid black 1px;
     padding-top:50px;
     margin:auto; 
 }
-.start-button{
+.balle1{
     //border:solid black 1px;
-    text-align:center;
 }
-.start-button img{
-   // border:solid black 1px;
-    height:130px;
-    width:130px;
-    border-radius:50px;
-    margin-right:290px;
-}
-.go-back-button{
-   //border:solid black 1px;
-    text-align:center;
-    
-}
-.go-back-button img{
-    height:130px;
-    width:130px;
-    margin-left:290px;
+.balle2{
+    //border:solid black 1px;
 }
 
 
@@ -105,19 +71,13 @@
 
 
 .player1-radiobuttons, .player2-radiobuttons{
-
     //border:solid black 1px;
     text-align:center;
 }
 .player1-radiobuttons label, .player2-radiobuttons label{
-
     //border:solid red 1px;
     margin-left:20px;
-    
-
 }
-
-
   
   .option-input {
     -webkit-appearance: none;
