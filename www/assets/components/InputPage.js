@@ -66,10 +66,10 @@ class InputPage extends Component {
     let playerTwo = p2.val().length >= 2 && p2.val().length <= 10;
 
     if (playerOne === true) {
-      this.playerOne = new Player(p1.val(), this.playerOneType);
+      this.playerOne = new Player(p1.val(), this.playerOneType, this.playerOneImg);
     }
     if (playerTwo === true) {
-      this.playerTwo = new Player(p2.val(), this.playerTwoType);
+      this.playerTwo = new Player(p2.val(), this.playerTwoType, this.playerTwoImg);
     }
   }
 
