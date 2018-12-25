@@ -11,10 +11,10 @@ class InputPage extends Component {
 
     this.addEvents({'click .player1-img-section': 'selectPlayer1Img'});
     this.player1PreviousTarget='.pirate1-img'; 
-    this.playerOneImg;
+    this.playerOneImg='/assets/img/pirates/pirate1.jpg';
     this.addEvents({'click .player2-img-section': 'selectPlayer2Img'});
     this.player2PreviousTarget='.pirate4-img';
-    this.playerTwoImg;
+    this.playerTwoImg='/assets/img/pirates/pirate4.jpg';
 
     this.playPage = playPage;
     this.playerOne;
