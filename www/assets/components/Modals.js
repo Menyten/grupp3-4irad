@@ -5,7 +5,7 @@ class Modals extends Component {
         this.addEvents({
             'click .restartButton': 'restartGame'
         })
-        this.victoryModal();
+        
 
         
     }

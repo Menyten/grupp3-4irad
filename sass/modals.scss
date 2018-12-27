@@ -1,16 +1,8 @@
 .modal-content {
     border: none;
-    // width: 464px;
-    // height: 604px;
     height: 75vh;
     width: 40vw;
-    // -webkit-box-shadow: inset 0px 0px 46px 10px rgba(0,0,0,1);
-    // -moz-box-shadow: inset 0px 0px 46px 10px rgba(0,0,0,1);
-    // box-shadow: inset 0px 0px 46px 10px rgba(0,0,0,1);
     background-color: transparent;
-   // background-image: url(http://oldduckinn.com/wp-content/uploads/Grungy-Old-Wood-Texture.jpg);
-    // background-image: url(http://images8.design-editor.com/92/9244089/3958%2F82B7708D-5B2C-17E6-37AC-EA692B18C3AA.png);
-    // background-size: cover;
 
 }
 
@@ -35,7 +27,6 @@
 }
 
 .modal-background-container {
-    // position: absolute;
     width: 100%;
     height: 100%;
 }
@@ -64,13 +55,6 @@
     border-top: 0px;
 }
 
-.restartButton {
-    background-color: #ffd700;
-    color: black;
-    border-color: black;
-    opacity: 0.5;
-}
-
 .goldenButton:hover {
     opacity: 1;
     background-color: #ffd700;
@@ -87,8 +71,8 @@
 }
 
 .playAgain:hover {
-    color: #006c7f;
-    text-shadow: 0px 0px 19px #1C6EA4;
+    color: #fcfcfc;
+    text-shadow: 0px 0px 19px black;
 
     transition: color 300ms, text-shadow 300ms;
 }
@@ -107,3 +91,1919 @@ img {
     display: block;
     margin: auto;
 }
+
+.exitGame {
+    margin: 0 20px!important;
+    font-size: 1.5em;
+    font-family: 'Pirata One', cursive;
+    cursor: pointer;
+
+    transition: color 300ms, text-shadow 300ms;
+}
+
+.exitGame:hover {
+    color: #dd0f3c;
+    text-shadow: 0px 0px 19px black;
+
+    transition: color 300ms, text-shadow 300ms;
+}
+
+ a {
+    color: black;
+    
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@media screen and (max-width: 1367px) {
+
+
+    .modal-content {
+        border: none;
+        height: 87vh;
+        width: 40vw;
+        background-color: transparent;
+    
+    }
+    
+    .modal-dialog {
+        max-width: none;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-background {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modalWin {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modal-background-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .modalContent {
+        position: absolute;
+        top: 182px;
+        left: 75px;
+        right: 75px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .modal-body {
+        width: 100%;
+    }
+    
+    .modal-header {
+        border-bottom: 0px;
+    }
+    
+    .modal-footer {
+        border-top: 0px;
+        margin-right: -38px;
+    }
+    
+    .goldenButton:hover {
+        opacity: 1;
+        background-color: #ffd700;
+        color: black;
+    }
+    
+    .playAgain {
+        margin: 0 20px!important;
+        font-size: 1.5em;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .playAgain:hover {
+        color: #fcfcfc;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    h5 {
+        font-family: 'Pirata One', cursive;
+        font-size: 41px;
+        text-align: center;
+    }
+    
+    .modal-title {
+        line-height: 2.5;
+    }
+    
+    img {
+        display: block;
+        margin: auto;
+    }
+    
+    .exitGame {
+        margin: 0 20px!important;
+        font-size: 1.5em;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .exitGame:hover {
+        color: #dd0f3c;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+     a {
+        color: black;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    
+
+}
+
+
+
+
+@media screen and (max-width: 1025px) {
+
+
+    .modal-content {
+        border: none;
+        height: 83vh;
+        width: 56vw;
+        background-color: transparent;
+    
+    }
+    
+    .modal-dialog {
+        max-width: none;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-background {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modalWin {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modal-background-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .modalContent {
+        position: absolute;
+        top: 160px;
+        left: 75px;
+        right: 75px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .modal-body {
+        width: 100%;
+    }
+    
+    .modal-header {
+        border-bottom: 0px;
+    }
+    
+    .modal-footer {
+        border-top: 0px;
+        margin-bottom: 23px;
+    }
+    
+    .goldenButton:hover {
+        opacity: 1;
+        background-color: #ffd700;
+        color: black;
+    }
+    
+    .playAgain {
+        margin: 0 20px!important;
+        font-size: 1.5em;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .playAgain:hover {
+        color: #fcfcfc;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    h5 {
+        font-family: 'Pirata One', cursive;
+        font-size: 41px;
+        text-align: center;
+    }
+    
+    .modal-title {
+        line-height: 2.5;
+    }
+    
+    img {
+        display: block;
+        margin: auto;
+    }
+    
+    .exitGame {
+        margin: 0 20px!important;
+        font-size: 1.5em;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .exitGame:hover {
+        color: #dd0f3c;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+     a {
+        color: black;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+}
+
+@media screen and (max-width: 824px) {
+
+    .modal-content {
+        border: none;
+        height: 87vh;
+        width: 97vw;
+        background-color: transparent;
+    
+    }
+    
+    .modal-dialog {
+        max-width: none;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-background {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modalWin {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modal-background-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .modalContent {
+        position: absolute;
+        top: 29px;
+        left: 75px;
+        right: 75px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .modal-body {
+        width: 100%;
+    }
+    
+    .modal-header {
+        border-bottom: 0px;
+    }
+    
+    .modal-footer {
+        border-top: 0px;
+    }
+    
+    .goldenButton:hover {
+        opacity: 1;
+        background-color: #ffd700;
+        color: black;
+    }
+    
+    .playAgain {
+        margin: 0 20px!important;
+        font-size: 1.5em;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .playAgain:hover {
+        color: #fcfcfc;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    h5 {
+        font-family: 'Pirata One', cursive;
+        font-size: 37px;
+        text-align: center;
+    }
+    
+    .modal-title {
+        line-height: 2.5;
+        margin-top: -29px;
+        margin-bottom: -19px;
+    }
+    
+    img {
+        display: block;
+        margin: auto;
+    }
+    
+    .exitGame {
+        margin: 0 20px!important;
+        font-size: 1.5em;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .exitGame:hover {
+        color: #dd0f3c;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+     a {
+        color: black;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    
+}
+
+@media screen and (max-width: 813px) {
+
+
+    .modal-content {
+        border: none;
+        height: 69vh;
+        width: 93vw;
+        background-color: transparent;
+    
+    }
+    
+    .modal-dialog {
+        max-width: none;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-background {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modalWin {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modal-background-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .modalContent {
+        position: absolute;
+        top: 18px;
+        left: 75px;
+        right: 75px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .modal-body {
+        width: 100%;
+    }
+    
+    .modal-header {
+        border-bottom: 0px;
+    }
+    
+    .modal-footer {
+        border-top: 0px;
+    }
+    
+    .goldenButton:hover {
+        opacity: 1;
+        background-color: #ffd700;
+        color: black;
+    }
+    
+    .playAgain {
+        margin: 0 4px!important;
+        font-size: 15px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .playAgain:hover {
+        color: #fcfcfc;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    h5 {
+        font-family: 'Pirata One', cursive;
+        font-size: 22px;
+        text-align: center;
+    }
+    
+    .modal-title {
+        line-height: 2.5;
+        margin-top: -17px;
+        margin-bottom: -65px;
+    }
+    
+    img {
+        display: block;
+        margin: auto;
+    }
+    
+    .exitGame {
+        margin: 0 20px!important;
+        font-size: 15px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .exitGame:hover {
+        color: #dd0f3c;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+     a {
+        color: black;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    
+
+}
+
+@media screen and (max-width: 769px) {
+
+    .modal-content {
+        border: none;
+        height: 69vh;
+        width: 93vw;
+        background-color: transparent;
+    
+    }
+    
+    .modal-dialog {
+        max-width: none;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-background {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modalWin {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modal-background-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .modalContent {
+        position: absolute;
+        top: 120px;
+        left: 75px;
+        right: 75px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .modal-body {
+        width: 100%;
+    }
+    
+    .modal-header {
+        border-bottom: 0px;
+    }
+    
+    .modal-footer {
+        border-top: 0px;
+    }
+    
+    .goldenButton:hover {
+        opacity: 1;
+        background-color: #ffd700;
+        color: black;
+    }
+    
+    .playAgain {
+        margin: 0 4px!important;
+        font-size: 31px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .playAgain:hover {
+        color: #fcfcfc;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    h5 {
+        font-family: 'Pirata One', cursive;
+        font-size: 46px;
+        text-align: center;
+    }
+    
+    .modal-title {
+        line-height: 2.5;
+        margin-top: -17px;
+        margin-bottom: -65px;
+    }
+    
+    img {
+        display: block;
+        margin: auto;
+    }
+    
+    .exitGame {
+        margin: 0 20px!important;
+        font-size: 31px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .exitGame:hover {
+        color: #dd0f3c;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+     a {
+        color: black;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 737px) {
+
+    .modal-content {
+        border: none;
+        height: 88vh;
+        width: 95vw;
+        background-color: transparent;
+    
+    }
+    
+    .modal-dialog {
+        max-width: none;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-background {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modalWin {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modal-background-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .modalContent {
+        position: absolute;
+        top: 34px;
+        left: 75px;
+        right: 75px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .modal-body {
+        width: 100%;
+    }
+    
+    .modal-header {
+        border-bottom: 0px;
+    }
+    
+    .modal-footer {
+        border-top: 0px;
+        margin-top: 15px;
+    }
+    
+    .goldenButton:hover {
+        opacity: 1;
+        background-color: #ffd700;
+        color: black;
+    }
+    
+    .playAgain {
+        margin: 0 20px!important;
+        font-size: 1.5em;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .playAgain:hover {
+        color: #fcfcfc;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    h5 {
+        font-family: 'Pirata One', cursive;
+        font-size: 35px;
+        text-align: center;
+    }
+    
+    .modal-title {
+        line-height: 2.5;
+        margin-bottom: -41px;
+    }
+    
+    img {
+        display: block;
+        margin: auto;
+    }
+    
+    .exitGame {
+        margin: 0 20px!important;
+        font-size: 1.5em;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .exitGame:hover {
+        color: #dd0f3c;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+     a {
+        color: black;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+}
+
+@media screen and (max-width: 732px) {
+
+    .modal-content {
+        border: none;
+        height: 88vh;
+        width: 95vw;
+        background-color: transparent;
+    
+    }
+    
+    .modal-dialog {
+        max-width: none;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-background {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modalWin {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modal-background-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .modalContent {
+        position: absolute;
+        top: 34px;
+        left: 75px;
+        right: 75px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .modal-body {
+        width: 100%;
+    }
+    
+    .modal-header {
+        border-bottom: 0px;
+    }
+    
+    .modal-footer {
+        border-top: 0px;
+        margin-top: 15px;
+    }
+    
+    .goldenButton:hover {
+        opacity: 1;
+        background-color: #ffd700;
+        color: black;
+    }
+    
+    .playAgain {
+        margin: 0 20px!important;
+        font-size: 1.5em;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .playAgain:hover {
+        color: #fcfcfc;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    h5 {
+        font-family: 'Pirata One', cursive;
+        font-size: 35px;
+        text-align: center;
+    }
+    
+    .modal-title {
+        line-height: 2.5;
+        margin-bottom: -41px;
+    }
+    
+    img {
+        display: block;
+        margin: auto;
+    }
+    
+    .exitGame {
+        margin: 0 20px!important;
+        font-size: 1.5em;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .exitGame:hover {
+        color: #dd0f3c;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+     a {
+        color: black;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+}
+
+@media screen and (max-width: 668px) {
+
+    .modal-content {
+        border: none;
+        height: 88vh;
+        width: 95vw;
+        background-color: transparent;
+    
+    }
+    
+    .modal-dialog {
+        max-width: none;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-background {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modalWin {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modal-background-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .modalContent {
+        position: absolute;
+        top: 26px;
+        left: 75px;
+        right: 75px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .modal-body {
+        width: 100%;
+    }
+    
+    .modal-header {
+        border-bottom: 0px;
+    }
+    
+    .modal-footer {
+        border-top: 0px;
+        margin-top: 15px;
+        margin-right: -53px;
+    }
+    
+    .goldenButton:hover {
+        opacity: 1;
+        background-color: #ffd700;
+        color: black;
+    }
+    
+    .playAgain {
+        margin: 0 4px!important;
+        font-size: 21px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .playAgain:hover {
+        color: #fcfcfc;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    h5 {
+        font-family: 'Pirata One', cursive;
+        font-size: 33px;
+        text-align: center;
+    }
+    
+    .modal-title {
+        margin-bottom: -41px;
+        margin-top: -29px;
+    }
+    
+    img {
+        display: block;
+        margin: auto;
+    }
+    
+    .exitGame {
+        margin: 0 20px!important;
+        font-size: 21px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .exitGame:hover {
+        color: #dd0f3c;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+     a {
+        color: black;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+}
+
+@media screen and (max-width: 641px) {
+
+    .modal-content {
+        border: none;
+        height: 88vh;
+        width: 95vw;
+        background-color: transparent;
+    
+    }
+    
+    .modal-dialog {
+        max-width: none;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-background {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modalWin {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modal-background-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .modalContent {
+        position: absolute;
+        top: 26px;
+        left: 75px;
+        right: 75px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .modal-body {
+        width: 100%;
+    }
+    
+    .modal-header {
+        border-bottom: 0px;
+    }
+    
+    .modal-footer {
+        border-top: 0px;
+        margin-top: 15px;
+        margin-right: -53px;
+    }
+    
+    .goldenButton:hover {
+        opacity: 1;
+        background-color: #ffd700;
+        color: black;
+    }
+    
+    .playAgain {
+        margin: 0 4px!important;
+        font-size: 21px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .playAgain:hover {
+        color: #fcfcfc;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    h5 {
+        font-family: 'Pirata One', cursive;
+        font-size: 33px;
+        text-align: center;
+    }
+    
+    .modal-title {
+        margin-bottom: -51px;
+        margin-top: -29px;
+    }
+    
+    img {
+        display: block;
+        margin: auto;
+    }
+    
+    .exitGame {
+        margin: 0 20px!important;
+        font-size: 21px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .exitGame:hover {
+        color: #dd0f3c;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+     a {
+        color: black;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+
+}
+
+
+@media screen and (max-width: 569px) {
+
+    .modal-content {
+        border: none;
+        height: 88vh;
+        width: 95vw;
+        background-color: transparent;
+    
+    }
+    
+    .modal-dialog {
+        max-width: none;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-background {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modalWin {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modal-background-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .modalContent {
+        position: absolute;
+        top: 26px;
+        left: 75px;
+        right: 75px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .modal-body {
+        width: 100%;
+    }
+    
+    .modal-header {
+        border-bottom: 0px;
+    }
+    
+    .modal-footer {
+        border-top: 0px;
+        margin-top: 15px;
+        margin-right: -68px;
+    }
+    
+    .goldenButton:hover {
+        opacity: 1;
+        background-color: #ffd700;
+        color: black;
+    }
+    
+    .playAgain {
+        margin: 0 -9px!important;
+        font-size: 16px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .playAgain:hover {
+        color: #fcfcfc;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    h5 {
+        font-family: 'Pirata One', cursive;
+        font-size: 29px;
+        text-align: center;
+    }
+    
+    .modal-title {
+        margin-bottom: -68px;
+        margin-top: -29px;
+    }
+    
+    img {
+        display: block;
+        margin: auto;
+    }
+    
+    .exitGame {
+        margin: 0 20px!important;
+        font-size: 16px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .exitGame:hover {
+        color: #dd0f3c;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+     a {
+        color: black;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 415px) { 
+
+    .modal-content {
+        border: none;
+        height: 88vh;
+        width: 95vw;
+        background-color: transparent;
+    
+    }
+    
+    .modal-dialog {
+        max-width: none;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-background {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modalWin {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modal-background-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .modalContent {
+        position: absolute;
+        top: 121px;
+        left: 57px;
+        right: 75px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .modal-body {
+        width: 100%;
+    }
+    
+    .modal-header {
+        border-bottom: 0px;
+    }
+    
+    .modal-footer {
+        border-top: 0px;
+        margin-top: 15px;
+        margin-right: -68px;
+    }
+    
+    .goldenButton:hover {
+        opacity: 1;
+        background-color: #ffd700;
+        color: black;
+    }
+    
+    .playAgain {
+        margin: 0 -9px!important;
+        font-size: 25px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .playAgain:hover {
+        color: #fcfcfc;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    h5 {
+        font-family: 'Pirata One', cursive;
+        font-size: 34px;
+        text-align: center;
+    }
+    
+    .modal-title {
+        margin-bottom: -68px;
+        margin-top: 0px;
+        margin-right: -21px;
+    }
+    
+    img {
+        display: block;
+        margin: auto;
+    }
+    
+    .exitGame {
+        margin: 0 20px!important;
+        font-size: 25px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .exitGame:hover {
+        color: #dd0f3c;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+     a {
+        color: black;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 412px) { 
+
+    .modal-content {
+        border: none;
+        height: 88vh;
+        width: 95vw;
+        background-color: transparent;
+    
+    }
+    
+    .modal-dialog {
+        max-width: none;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-background {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modalWin {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modal-background-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .modalContent {
+        position: absolute;
+        top: 121px;
+        left: 57px;
+        right: 75px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .modal-body {
+        width: 100%;
+    }
+    
+    .modal-header {
+        border-bottom: 0px;
+    }
+    
+    .modal-footer {
+        border-top: 0px;
+        margin-top: 15px;
+        margin-right: -68px;
+    }
+    
+    .goldenButton:hover {
+        opacity: 1;
+        background-color: #ffd700;
+        color: black;
+    }
+    
+    .playAgain {
+        margin: 0 -9px!important;
+        font-size: 25px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .playAgain:hover {
+        color: #fcfcfc;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    h5 {
+        font-family: 'Pirata One', cursive;
+        font-size: 34px;
+        text-align: center;
+    }
+    
+    .modal-title {
+        margin-bottom: -68px;
+        margin-top: 0px;
+        margin-right: -21px;
+    }
+    
+    img {
+        display: block;
+        margin: auto;
+    }
+    
+    .exitGame {
+        margin: 0 20px!important;
+        font-size: 25px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .exitGame:hover {
+        color: #dd0f3c;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+     a {
+        color: black;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 376px) { 
+
+    .modal-content {
+        border: none;
+        height: 88vh;
+        width: 95vw;
+        background-color: transparent;
+    
+    }
+    
+    .modal-dialog {
+        max-width: none;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-background {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modalWin {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modal-background-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .modalContent {
+        position: absolute;
+        top: 121px;
+        left: 40px;
+        right: 75px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .modal-body {
+        width: 100%;
+    }
+    
+    .modal-header {
+        border-bottom: 0px;
+    }
+    
+    .modal-footer {
+        border-top: 0px;
+        margin-top: 15px;
+        margin-right: -68px;
+    }
+    
+    .goldenButton:hover {
+        opacity: 1;
+        background-color: #ffd700;
+        color: black;
+    }
+    
+    .playAgain {
+        margin: 0 -9px!important;
+        font-size: 25px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .playAgain:hover {
+        color: #fcfcfc;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    h5 {
+        font-family: 'Pirata One', cursive;
+        font-size: 34px;
+        text-align: center;
+    }
+    
+    .modal-title {
+        margin-bottom: -68px;
+        margin-top: 0px;
+        margin-right: -21px;
+    }
+    
+    img {
+        display: block;
+        margin: auto;
+    }
+    
+    .exitGame {
+        margin: 0 20px!important;
+        font-size: 25px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .exitGame:hover {
+        color: #dd0f3c;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+     a {
+        color: black;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 361px) { 
+
+    .modal-content {
+        border: none;
+        height: 88vh;
+        width: 95vw;
+        background-color: transparent;
+    
+    }
+    
+    .modal-dialog {
+        max-width: none;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-background {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modalWin {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modal-background-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .modalContent {
+        position: absolute;
+        top: 121px;
+        left: 34px;
+        right: 75px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .modal-body {
+        width: 100%;
+    }
+    
+    .modal-header {
+        border-bottom: 0px;
+    }
+    
+    .modal-footer {
+        border-top: 0px;
+        margin-top: 85px;
+        margin-right: -68px;
+    }
+    
+    .goldenButton:hover {
+        opacity: 1;
+        background-color: #ffd700;
+        color: black;
+    }
+    
+    .playAgain {
+        margin: 0 -9px!important;
+        font-size: 25px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .playAgain:hover {
+        color: #fcfcfc;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    h5 {
+        font-family: 'Pirata One', cursive;
+        font-size: 34px;
+        text-align: center;
+    }
+    
+    .modal-title {
+        margin-bottom: -68px;
+        margin-top: 0px;
+        margin-right: -21px;
+    }
+    
+    img {
+        display: block;
+        margin: auto;
+    }
+    
+    .exitGame {
+        margin: 0 20px!important;
+        font-size: 25px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .exitGame:hover {
+        color: #dd0f3c;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+     a {
+        color: black;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 321px) { 
+
+    .modal-content {
+        border: none;
+        height: 88vh;
+        width: 95vw;
+        background-color: transparent;
+    
+    }
+    
+    .modal-dialog {
+        max-width: none;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-background {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modalWin {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .modal-background-container {
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    .modalContent {
+        position: absolute;
+        top: 59px;
+        left: 11px;
+        right: 75px;
+        bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .modal-body {
+        width: 100%;
+    }
+    
+    .modal-header {
+        border-bottom: 0px;
+    }
+    
+    .modal-footer {
+        border-top: 0px;
+        margin-top: 121px;
+        margin-right: -82px;
+    }
+    
+    .goldenButton:hover {
+        opacity: 1;
+        background-color: #ffd700;
+        color: black;
+    }
+    
+    .playAgain {
+        margin: 0 -9px!important;
+        font-size: 20px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .playAgain:hover {
+        color: #fcfcfc;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    h5 {
+        font-family: 'Pirata One', cursive;
+        font-size: 29px;
+        text-align: center;
+    }
+    
+    .modal-title {
+        margin-bottom: -68px;
+        margin-top: 0px;
+        margin-right: -58px;
+    }
+    
+    img {
+        display: block;
+        margin: auto;
+    }
+    
+    .exitGame {
+        margin: 0 20px!important;
+        font-size: 20px;
+        font-family: 'Pirata One', cursive;
+        cursor: pointer;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+    .exitGame:hover {
+        color: #dd0f3c;
+        text-shadow: 0px 0px 19px black;
+    
+        transition: color 300ms, text-shadow 300ms;
+    }
+    
+     a {
+        color: black;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+
+}
+
+
+
