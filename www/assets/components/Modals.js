@@ -5,6 +5,7 @@ class Modals extends Component {
         this.addEvents({
             'click .restartButton': 'restartGame'
         })
+        
 
         
     }
@@ -23,7 +24,7 @@ class Modals extends Component {
     }
 
     victoryModal(winnerName) {
-        this.title = "Grattis!  ";
+        this.title = "Grattis  ";
         this.winnerName = winnerName;
         $(document).ready(function () {
             $('.modal-body').addClass('victoryImage');
