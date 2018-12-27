@@ -1,32 +1,58 @@
 .modal-content {
-    width: 464px;
-    height: 604px;
-    -webkit-box-shadow: inset 0px 0px 46px 10px rgba(0,0,0,1);
-    -moz-box-shadow: inset 0px 0px 46px 10px rgba(0,0,0,1);
-    box-shadow: inset 0px 0px 46px 10px rgba(0,0,0,1);
-    background-color: #d2bba0;
-    background-image: url(http://oldduckinn.com/wp-content/uploads/Grungy-Old-Wood-Texture.jpg);
-    background-size: cover;
+    border: none;
+    // width: 464px;
+    // height: 604px;
+    height: 75vh;
+    width: 40vw;
+    // -webkit-box-shadow: inset 0px 0px 46px 10px rgba(0,0,0,1);
+    // -moz-box-shadow: inset 0px 0px 46px 10px rgba(0,0,0,1);
+    // box-shadow: inset 0px 0px 46px 10px rgba(0,0,0,1);
+    background-color: transparent;
+   // background-image: url(http://oldduckinn.com/wp-content/uploads/Grungy-Old-Wood-Texture.jpg);
+    // background-image: url(http://images8.design-editor.com/92/9244089/3958%2F82B7708D-5B2C-17E6-37AC-EA692B18C3AA.png);
+    // background-size: cover;
 
 }
 
-.victoryImage {
-    
-    
+.modal-dialog {
+    max-width: none;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.losingImage {
-    background-image: url(https://moonfireprojekt.files.wordpress.com/2014/12/krakenyps.jpg?w=549);
-    background-size: cover;
-    
+.modal-background {
+    width: 100%;
+    height: 100%;
 }
 
-.drawImage {
-    background-image: url(https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2018/02/sea-of-thieves-kraken.jpg?itok=BMpvJZZe);
-    background-size: cover;
+.modalWin {
+    width: 100%;
+    height: 100%;
 }
 
-.modal-body img {
+.modal-background-container {
+    // position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+.modalContent {
+    position: absolute;
+    top: 100px;
+    left: 75px;
+    right: 75px;
+    bottom: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.modal-body {
     width: 100%;
 }
 
@@ -49,4 +75,35 @@
     opacity: 1;
     background-color: #ffd700;
     color: black;
+}
+
+.playAgain {
+    margin: 0 20px!important;
+    font-size: 1.5em;
+    font-family: 'Pirata One', cursive;
+    cursor: pointer;
+
+    transition: color 300ms, text-shadow 300ms;
+}
+
+.playAgain:hover {
+    color: #006c7f;
+    text-shadow: 0px 0px 19px #1C6EA4;
+
+    transition: color 300ms, text-shadow 300ms;
+}
+
+h5 {
+    font-family: 'Pirata One', cursive;
+    font-size: 41px;
+    text-align: center;
+}
+
+.modal-title {
+    line-height: 2.5;
+}
+
+img {
+    display: block;
+    margin: auto;
 }

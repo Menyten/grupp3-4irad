@@ -2,12 +2,20 @@
     <div class="modalWin" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-body mx-auto">
-                        <h5 class="modal-title">${this.title} ${this.winnerName}</h5>
+                <div class="modal-background-container">
+                    <img class="modal-background" src="../../images/scrollpirate2.png" alt="">
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary restartButton" data-dismiss="modal">Spela igen</button>
-                    <a href="/new-game" id="quit-game" class="btn btn-secondary showNavFoot" data-dismiss="modal" role="button" aria-pressed="true">Gå tillbaka</a>
+
+                <div class="modalContent">
+                    <div class="modal-body mx-auto">
+                        <img src="/images/pirate-done.png">
+                        <h5 class="modal-title">${this.title} ${this.winnerName}!</h5>
+                    </div>
+                    <div class="modal-footer">
+                        <span class="playAgain">Spela Igen</span>
+                        <!-- <button type="button" class="btn btn-primary restartButton playAgain" data-dismiss="modal">Spela igen</button> -->
+                        <a href="/new-game" id="quit-game" class="btn btn-secondary showNavFoot" data-dismiss="modal" role="button" aria-pressed="true">Gå tillbaka</a>
+                    </div>
                 </div>
             </div>
         </div>
