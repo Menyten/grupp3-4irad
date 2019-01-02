@@ -1,0 +1,7 @@
+class Highscore {
+  constructor() { }
+
+  checkHighscore() {
+
+  }
+}
