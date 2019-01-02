@@ -40,7 +40,7 @@ class WinChecker {
           // return the information about the win
           return {
            
-            moves: Math.ceil(Marker.count/2)
+            moves: Math.ceil(Marker.count/2),
             winner: winner,
             markers: markers
           }
