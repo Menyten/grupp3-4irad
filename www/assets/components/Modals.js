@@ -35,6 +35,7 @@ class Modals extends Component {
 
     loserModal() {
         this.title = "Du förlorade tyvärr";
+        this.winnerName = '';
         $(document).ready(function () {
             $('.modal-body').addClass('losingImage');
         });
