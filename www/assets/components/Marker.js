@@ -17,4 +17,16 @@ class Marker extends Component {
     const innerDiv = this.baseEl.find('.animate');
     innerDiv.fadeIn(600, 'linear');
   }
+
+  victoryAnimation() {
+    const newDiv = $('<div class="victory-animation"></div>');
+    this.baseEl.append(newDiv);
+    newDiv.fadeIn(650);    
+  }
+
+  nonVictoryAnimation() {
+    const newDiv = $('<div class="non-victory-animation"></div>');
+    this.baseEl.append(newDiv);
+    newDiv.fadeIn(200);    
+  }
 }

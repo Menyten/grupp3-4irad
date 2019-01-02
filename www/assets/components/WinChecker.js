@@ -25,10 +25,24 @@ class WinChecker {
           && columns[j].markers[i].player === columns[j + 2].markers[i].player
           && columns[j].markers[i].player === columns[j + 3].markers[i].player
         ) {
+          // save the winner as a variable
+          const winner = columns[j].markers[i].player
+          // save the four winning markers to an array
+          const markers = [columns[j].markers[i], columns[j+1].markers[i], columns[j+2].markers[i], columns[j+3].markers[i]];
+          // check if there are more connected markers by the same player, if so add them too
+          let k = 4;
+          while (columns[j + k]) {
+            if (columns[j + k].markers[i] && columns[j + k].markers[i].player === winner) {
+              markers.push(columns[j + k].markers[i]);
+            }
+            k++;
+          }
+          // return the information about the win
           return {
-            winner: columns[j].markers[i].player,
-            markers: [[j, i], [j + 1, i], [j + 2, i], [j + 3, i]],
+           
             moves: Math.ceil(Marker.count/2)
+            winner: winner,
+            markers: markers
           }
         }
       }
@@ -51,8 +65,9 @@ class WinChecker {
         ) {
           return {
             winner: columns[i].markers[j].player,
-            markers: [[i, j], [i, j + 1], [i, j + 2], [i, j + 3]],
-            moves: Math.ceil(Marker.count/2)
+
+            moves: Math.ceil(Marker.count/2),
+            markers: [columns[i].markers[j+3], columns[i].markers[j+2], columns[i].markers[j+1], columns[i].markers[j]]
           }
         }
       }
@@ -71,10 +86,24 @@ class WinChecker {
           && columns[i].markers[j].player === columns[i + 2].markers[j + 2].player
           && columns[i].markers[j].player === columns[i + 3].markers[j + 3].player
         ) {
+          // save the winner as a variable
+          const winner = columns[i].markers[j].player
+          // save the four winning markers to an array:
+          const markers = [columns[i].markers[j], columns[i+1].markers[j+1], columns[i+2].markers[j+2], columns[i+3].markers[j+3]];
+          // check if there are more connected markers by the same player, if so add them too
+          let k = 4;
+          while (columns[i + k] && columns[i + k].markers[j + k]) {
+            if (columns[i + k].markers[j + k].player === winner) {
+              markers.push(columns[i + k].markers[j + k]);
+            }
+            k++;
+          }
+          // return information about the win
           return {
-            winner: columns[i].markers[j].player,
-            markers: [[i, j], [i+1, j+1], [i+2, j+2], [i+3, j+3]],
-            moves: Math.ceil(Marker.count/2)
+            moves: Math.ceil(Marker.count/2),
+            winner: winner,
+            markers: markers,
+
           }
         }
       }
@@ -87,10 +116,23 @@ class WinChecker {
           && columns[i].markers[j].player === columns[i + 2].markers[j - 2].player
           && columns[i].markers[j].player === columns[i + 3].markers[j - 3].player
         ) {
+          // save the winner as a variable
+          const winner = columns[i].markers[j].player
+          // save the four winning markers to an array:
+          const markers = [columns[i].markers[j], columns[i+1].markers[j-1], columns[i+2].markers[j-2], columns[i+3].markers[j-3]];
+          // check if there are more connected markers by the same player, if so add them too
+          let k = 4;
+          while (columns[i + k] && columns[i + k].markers[j - k]) {
+            if (columns[i + k].markers[j - k].player === winner) {
+              markers.push(columns[i + k].markers[j - k]);
+            }
+            k++;
+          }
+          // return information about the win
           return {
-            winner: columns[i].markers[j].player,
-            markers: [[i, j], [i+1, j-1], [i+2, j-2], [i+3, j-3]],
-            moves: Math.ceil(Marker.count/2)
+            moves: Math.ceil(Marker.count/2),
+            winner: winner,
+            markers: markers
           }
         }
       }
