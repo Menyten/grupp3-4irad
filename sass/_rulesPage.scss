@@ -11,3 +11,34 @@
     margin-top: 2rem;
   }
 }
+
+@media screen and (max-width: 415px) {
+
+  .rules-page {
+    h2 {
+      font-family: "Charm", cursive;
+      font-weight: bold;
+    }
+    p {
+      font-family: "Charm", cursive;
+      font-size: 1.25rem;
+    }
+    .row {
+      margin-top: 2rem;
+    }
+  }
+
+  .p-0 {
+    padding: 1px !important
+  }
+
+  .fixed-bottom {
+    position: unset;
+  }
+
+}
+
+@media screen and (max-width: 769px) {
+
+  
+}
