@@ -40,7 +40,6 @@
             background-image: url('/assets/img/slot_background.jpg');
             border: 1px solid gray;
             box-shadow: inset 3px 3px 3px;
-            transition: opacity 1s ease-out;
 
 
             &.player-1 {
@@ -54,6 +53,16 @@
             
             &.animate {
               opacity: 0;
+            }
+
+            &.victory-animation {
+              display: none;
+              background: rgba(255, 255, 255, 0.2);
+            }
+
+            &.non-victory-animation {
+              display: none;
+              background: rgba(0, 0, 0, 0.2);
             }
           }
         }

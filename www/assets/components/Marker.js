@@ -26,4 +26,16 @@ class Marker extends Component {
       this.mounted = '';
     }, 0)
   }
+
+  victoryAnimation() {
+    const newDiv = $('<div class="victory-animation"></div>');
+    this.baseEl.append(newDiv);
+    newDiv.fadeIn(650);    
+  }
+
+  nonVictoryAnimation() {
+    const newDiv = $('<div class="non-victory-animation"></div>');
+    this.baseEl.append(newDiv);
+    newDiv.fadeIn(200);    
+  }
 }

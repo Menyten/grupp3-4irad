@@ -41,11 +41,13 @@ class Column extends Component {
       // in here we do whatever it is we wanna do when someone wins
       let winnerName = potentialWin.winner === 1 ? this.board.player1.name : this.board.player2.name;
       this.board.gameEnded = true;
-      App.modals.victoryModal(winnerName);      
+      // App.modals.victoryModal(winnerName);
+      this.board.animateWinningMarkers(potentialWin.markers);   
     }
     if (this.board.drawChecker.checkDraws(this.board.columns)) {
       this.board.gameEnded = true;
       App.modals.drawModal();
+      this.board.animateNonWinningMarkers();
     }
 
   }
