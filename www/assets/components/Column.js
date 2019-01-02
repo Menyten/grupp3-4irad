@@ -28,10 +28,12 @@ class Column extends Component {
     // some simple validation to prevent playing on full columns
     // at the moment it just does nothing if the colum is full, no error messages etc
     if (this.markers && this.markers.length < 6) {
-      this.markers.push(new Marker(this.board.playerTurn));
+      const newMarker = new Marker(this.board.playerTurn);
+      this.markers.push(newMarker);
       this.render();
       this.checkForWinOrDraw();
       this.board.changeTurn();
+      newMarker.animate();
     }    
   }
   
