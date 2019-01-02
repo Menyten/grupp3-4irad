@@ -69,5 +69,28 @@ class Board extends Component {
     }
   }
 
+  animateWinningMarkers(markers) {
+    this.animateNonWinningMarkers(markers);
+    let animationDelay = 0;
+    for (let marker of markers) {
+      setTimeout(() => {
+        marker.victoryAnimation();
+      }, animationDelay)
+      animationDelay += 60;
+    }
+  }
 
+  animateNonWinningMarkers(winningMarkers = []) {
+    let animationDelay = 0;
+    for (let column of this.columns) {
+      for (let marker of column.markers) {
+        if (!winningMarkers.includes(marker)) {
+          setTimeout(() => {
+            marker.nonVictoryAnimation()
+          }, animationDelay);
+          animationDelay += 40;
+        }
+      }
+    }
+  }
 }

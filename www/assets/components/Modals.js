@@ -19,8 +19,7 @@ class Modals extends Component {
         this.render();
         setTimeout(() => {
             this.baseEl.modal('show');
-
-        }, 1000);
+        }, 5000);
     }
 
     victoryModal(winnerName) {
@@ -30,7 +29,6 @@ class Modals extends Component {
             $('.modal-body').addClass('victoryImage');
         });
         this.show();
-
     }
 
     loserModal() {
@@ -50,5 +48,4 @@ class Modals extends Component {
         });
         this.show();
     }
-
 }

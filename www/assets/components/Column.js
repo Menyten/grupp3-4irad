@@ -53,10 +53,12 @@ class Column extends Component {
         App.modals.victoryModal(winnerName);
       }
 
+      this.board.animateWinningMarkers(potentialWin.markers);   
     }
     if (this.board.drawChecker.checkDraws(this.board.columns)) {
       this.board.gameEnded = true;
       App.modals.drawModal();
+      this.board.animateNonWinningMarkers();
     }
 
   }
@@ -76,7 +78,7 @@ class Column extends Component {
     this.render();
     setTimeout(() => {
         this.baseEl.modal('show');
-    }, 0);
+    }, 4000);
   }
 
 }
