@@ -28,7 +28,7 @@ class WinChecker {
           return {
             winner: columns[j].markers[i].player,
             markers: [[j, i], [j + 1, i], [j + 2, i], [j + 3, i]],
-            type: 'horizontal'
+            moves: Math.ceil(Marker.count/2)
           }
         }
       }
@@ -52,7 +52,7 @@ class WinChecker {
           return {
             winner: columns[i].markers[j].player,
             markers: [[i, j], [i, j + 1], [i, j + 2], [i, j + 3]],
-            type: 'vertical'
+            moves: Math.ceil(Marker.count/2)
           }
         }
       }
@@ -74,7 +74,7 @@ class WinChecker {
           return {
             winner: columns[i].markers[j].player,
             markers: [[i, j], [i+1, j+1], [i+2, j+2], [i+3, j+3]],
-            type: 'diagonal'
+            moves: Math.ceil(Marker.count/2)
           }
         }
       }
@@ -90,7 +90,7 @@ class WinChecker {
           return {
             winner: columns[i].markers[j].player,
             markers: [[i, j], [i+1, j-1], [i+2, j-2], [i+3, j-3]],
-            type: 'diagonal'
+            moves: Math.ceil(Marker.count/2)
           }
         }
       }
