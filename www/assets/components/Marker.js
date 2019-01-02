@@ -11,20 +11,11 @@ class Marker extends Component {
     this.id = ++Marker.count;
   }  
 
-  // this is a "lifecycle hook" I added to the framework
-  // basically the mounted()-method of any component (if there is one) runs after the element has been rendered to the DOM
-
-  mounted() {
-    // see marker.html for more details
-    // the newest marker added gets the class animate upon render
-    // we then remove the animate class to start the animation
-    const innerDiv = this.baseEl.find(`.player-${this.player}`);
-    innerDiv.removeClass('animate');
-    // then the function self-destructs to avoid running again
-    // (the component only attempts to run this.mounted if it is truthy)
-    setTimeout(() => {
-      this.mounted = '';
-    }, 0)
+  animate() {
+    // we animate the markers with jquery fadein
+    // this function gets called on a new marker after the move has been made and the new marker rendered
+    const innerDiv = this.baseEl.find('.animate');
+    innerDiv.fadeIn(600, 'linear');
   }
 
   victoryAnimation() {

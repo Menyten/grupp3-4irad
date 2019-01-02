@@ -44,7 +44,6 @@
 
             &.player-1 {
               background-image: url('/assets/img/silver-coin.jpg');
-              opacity: 1;
             }
             
             &.player-2 {
@@ -52,7 +51,7 @@
             }
             
             &.animate {
-              opacity: 0;
+              display: none;
             }
 
             &.victory-animation {
