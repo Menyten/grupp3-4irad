@@ -19,7 +19,7 @@ class Modals extends Component {
         this.render();
         setTimeout(() => {
             this.baseEl.modal('show');
-        }, 2000);
+        }, 5000);
     }
 
     victoryModal(winnerName) {

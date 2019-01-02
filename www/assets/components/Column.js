@@ -78,7 +78,7 @@ class Column extends Component {
     this.render();
     setTimeout(() => {
         this.baseEl.modal('show');
-    }, 0);
+    }, 4000);
   }
 
 }
