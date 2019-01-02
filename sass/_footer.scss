@@ -14,3 +14,12 @@ footer {
   box-shadow: 4px -9px 13px 5px rgba(210,187,160,0.25);
 }
 
+body > div {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
