@@ -48,7 +48,6 @@ for (let conf of config.sass) {
 
 // express etc should still be loaded in here...
 
-let fs = require('fs'); // import the fileSystem library
 let bodyParser = require('body-parser'); // import body-parser (to read sent data from clients)
 app.use(bodyParser.json()); // use body-parser
 app.use(bodyParser.urlencoded({ extended: false })); // configure body-parser
@@ -62,6 +61,6 @@ app.post('/add-score', (req, res) => {
     return a.score - b.score; // Google MDN js array sort and write the sort-function
   });
   highscores = highscores.slice(0, 10); // only keep the top 10 in the array
-  fs.writeFile('./www/assets/json/highscore.json', JSON.stringify(highscores), () => { }); // replace the file content with the new array
+  fs.writeFile('./www/assets/json/highscore.json', JSON.stringify(highscores, null, 2), () => { }); // replace the file content with the new array
   res.json(highscores); // respond to the browser, send the new/updated array
 });

@@ -40,9 +40,6 @@ class Column extends Component {
   checkForWinOrDraw() {
     const potentialWin = this.board.winChecker.checkForWin(this.board.columns);
     if (potentialWin) {
-      if (this.board.highscoreManager.checkForHighscore(potentialWin.moves)) {
-        
-      }
       // in here we do whatever it is we wanna do when someone wins
       let winnerName = potentialWin.winner === 1 ? this.board.player1.name : this.board.player2.name;
       this.board.gameEnded = true;
@@ -57,6 +54,10 @@ class Column extends Component {
       }
 
       this.board.animateWinningMarkers(potentialWin.markers);
+
+      if (this.board.highscoreManager.checkForHighscore(potentialWin.moves)) {
+        this.board.highscoreManager.postNewHighscore(winnerName, potentialWin.moves);
+      }
     }
     if (this.board.drawChecker.checkDraws(this.board.columns)) {
       this.board.gameEnded = true;
