@@ -1,47 +1,7 @@
 class HighscoreManager {
   constructor() {
-    this.highscoreList = [
-      {
-        "name": "Sterben",
-        "score": "4"
-      },
-      {
-        "name": "Kaugan",
-        "score": "5"
-      },
-      {
-        "name": "Svartsoppa",
-        "score": "6"
-      },
-      {
-        "name": "Stenen",
-        "score": "7"
-      },
-      {
-        "name": "Fläsk",
-        "score": "8"
-      },
-      {
-        "name": "Kaugan",
-        "score": "9"
-      },
-      {
-        "name": "Svartsoppa",
-        "score": "10"
-      },
-      {
-        "name": "Stenen",
-        "score": "11"
-      },
-      {
-        "name": "Fläsk",
-        "score": "12"
-      },
-      {
-        "name": "Fläsk",
-        "score": "14"
-      }
-    ]
+    this.highscoreList = [];
+    this.getNewHighscoreList()
   }
 
   checkForHighscore(score) {
@@ -51,6 +11,13 @@ class HighscoreManager {
       }
     }
     return false;
+  }
+
+  async getNewHighscoreList() {
+    const response = await fetch('http://localhost:3000/get-highscore', {
+      method: 'GET'
+    });
+    this.highscoreList = await response.json();    
   }
 
   /* addHighscore(name, score) {
@@ -64,11 +31,23 @@ class HighscoreManager {
   } */
 
 
-  postNewHighscore(name, score) {
-    $.post("/add-score", { name: name, score: score }, function (responseData) {
-      console.log('the new highscore-list is:', responseData);
-      console.error('append/use the new highscore-list then remove this console.error');
+  async postNewHighscore(name, score) {
+    // $.post("/add-score", { name: name, score: score }, function (responseData) {
+    //   console.log('the new highscore-list is:', responseData);
+    //   console.error('append/use the new highscore-list then remove this console.error');
+    // });
+    await fetch('http://localhost:3000/add-score', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name: name,
+        score: score
+      })
     });
+    await this.getNewHighscoreList();
+    console.log('gotten new list', this.highscoreList);
   }
 
 

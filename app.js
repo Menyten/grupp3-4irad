@@ -33,11 +33,6 @@ app.get('/template-to-js/:template', (req, res) => {
   res.send(html);
 });
 
-// Serve the index page everywhere so that the
-// frontend router can decide what to do
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/www/index.html'));
-});
 
 const Sass = require('./sass');
 const config = require('./config.json');
@@ -63,4 +58,14 @@ app.post('/add-score', (req, res) => {
   highscores = highscores.slice(0, 10); // only keep the top 10 in the array
   fs.writeFile('./www/assets/json/highscore.json', JSON.stringify(highscores, null, 2), () => { }); // replace the file content with the new array
   res.json(highscores); // respond to the browser, send the new/updated array
+});
+
+app.get('/get-highscore', (req, res) => {
+  res.status(200).json(highscores);
+});
+
+// Serve the index page everywhere so that the
+// frontend router can decide what to do
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/www/index.html'));
 });
