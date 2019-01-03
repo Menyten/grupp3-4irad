@@ -39,9 +39,10 @@ class WinChecker {
           }
           // return the information about the win
           return {
+           
+            moves: Math.ceil(Marker.count/2),
             winner: winner,
-            markers: markers,
-            type: 'horizontal'
+            markers: markers
           }
         }
       }
@@ -64,8 +65,9 @@ class WinChecker {
         ) {
           return {
             winner: columns[i].markers[j].player,
-            markers: [columns[i].markers[j+3], columns[i].markers[j+2], columns[i].markers[j+1], columns[i].markers[j]],
-            type: 'vertical'
+
+            moves: Math.ceil(Marker.count/2),
+            markers: [columns[i].markers[j+3], columns[i].markers[j+2], columns[i].markers[j+1], columns[i].markers[j]]
           }
         }
       }
@@ -98,9 +100,10 @@ class WinChecker {
           }
           // return information about the win
           return {
+            moves: Math.ceil(Marker.count/2),
             winner: winner,
             markers: markers,
-            type: 'diagonal'
+
           }
         }
       }
@@ -127,9 +130,9 @@ class WinChecker {
           }
           // return information about the win
           return {
+            moves: Math.ceil(Marker.count/2),
             winner: winner,
-            markers: markers,
-            type: 'diagonal'
+            markers: markers
           }
         }
       }
