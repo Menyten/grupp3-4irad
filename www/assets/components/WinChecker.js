@@ -39,7 +39,6 @@ class WinChecker {
           }
           // return the information about the win
           return {
-           
             moves: Math.ceil(Marker.count/2),
             winner: winner,
             markers: markers
@@ -65,7 +64,6 @@ class WinChecker {
         ) {
           return {
             winner: columns[i].markers[j].player,
-
             moves: Math.ceil(Marker.count/2),
             markers: [columns[i].markers[j+3], columns[i].markers[j+2], columns[i].markers[j+1], columns[i].markers[j]]
           }
