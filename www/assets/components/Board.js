@@ -12,6 +12,7 @@ class Board extends Component {
     this.drawChecker = new DrawChecker();
     this.computerPlayer = new ComputerPlayer();
     this.gameEnded = false;
+    this.highscoreManager = new HighscoreManager();
 
     this.player1 = player1
     this.player2 = player2
