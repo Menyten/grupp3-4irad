@@ -16,6 +16,7 @@ class InputPage extends Component {
     this.player2PreviousTarget='.pirate4-img';
     this.playerTwoImg='/assets/img/pirates/pirate4.jpg';
 
+    this.addEvents({'input .player-name': 'validateUsers'});
     this.playPage = playPage;
     this.playerOne;
     this.playerTwo;
@@ -52,6 +53,9 @@ class InputPage extends Component {
     const valRes = 0 + this.validateName($('#player1-name').val()) + this.validateName($('#player2-name').val());
     if (valRes === 2) {
       $('.inputButton').prop("disabled", false)
+    }
+    if (valRes !== 2) {
+      $('.inputButton').prop("disabled", true)
     }
   }
 
