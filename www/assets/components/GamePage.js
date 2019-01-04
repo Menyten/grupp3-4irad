@@ -15,6 +15,7 @@ class GamePage extends Component {
 
   newGame(playerOne, playerTwo) {
     this.activeGame = true;
+    Marker.count = 0;
     this.game = new Board(this, playerOne, playerTwo);
     this.game.focusPlayer();
     this.render();

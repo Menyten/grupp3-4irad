@@ -5,6 +5,7 @@ class Modals extends Component {
         this.addEvents({
             'click .restartButton': 'restartGame'
         })
+        
 
         
     }
@@ -18,22 +19,21 @@ class Modals extends Component {
         this.render();
         setTimeout(() => {
             this.baseEl.modal('show');
-
-        }, 1000);
+        }, 5000);
     }
 
     victoryModal(winnerName) {
-        this.title = "Grattis!  ";
+        this.title = "Grattis  ";
         this.winnerName = winnerName;
         $(document).ready(function () {
             $('.modal-body').addClass('victoryImage');
         });
         this.show();
-
     }
 
     loserModal() {
         this.title = "Du förlorade tyvärr";
+        this.winnerName = '';
         $(document).ready(function () {
             $('.modal-body').addClass('losingImage');
         });
@@ -48,5 +48,4 @@ class Modals extends Component {
         });
         this.show();
     }
-
 }
