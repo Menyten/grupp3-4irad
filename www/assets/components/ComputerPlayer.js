@@ -29,8 +29,13 @@ class ComputerPlayer {
     //     }
     //   }
     // }
-    // setTimeout(() => this.makeSmartMove(), 2000);
-    setTimeout(() => this.makeDeepMove(), 2000);
+    if (this.player === 2) {
+      setTimeout(() => this.makeSmartMove(), 2000);
+
+    } else {
+
+      setTimeout(() => this.makeDeepMove(), 2000);
+    }
   }
 
   makeRealMove(move) {
