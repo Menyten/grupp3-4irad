@@ -114,3 +114,87 @@
 .btn-primary:focus, .btn-primary.focus {
   box-shadow: 0 0 0 0.2rem rgba(210,187,160,1)
 }
+
+
+@media screen and (max-width: 824px) {
+
+  .gameExitButton {
+    margin-top: -155px;
+  }
+
+}
+
+@media screen and (max-width: 813px) {
+
+  .gameExitButton {
+    margin-top: -155px;
+    margin-left: 52px;
+
+  }
+}
+
+@media screen and (max-width: 769px) {
+
+  .gameExitButton {
+    margin-top: 3px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 737px) {
+
+  .gameExitButton {
+    margin-top: -155px;
+    margin-left: 0px;
+  }
+
+}
+
+@media screen and (max-width: 732px) {
+
+  .gameExitButton {
+    margin-top: -155px;
+  }
+
+}
+
+@media screen and (max-width: 668px) {
+
+  .gameExitButton {
+    margin-top: -155px;
+  }
+}
+
+@media screen and (max-width: 641px) {
+
+  .gameExitButton {
+    margin-top: -159px;
+  }
+
+
+}
+
+@media screen and (max-width: 569px) {
+
+  .gameExitButton {
+    margin-top: -155px;
+    margin-left: 33px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  
+  .gameExitButton {
+    margin-top: -66px;
+    margin-left: 19px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+
+  .gameExitButton {
+    margin-top: -67px;
+    margin-left: 15px;
+  }
+}
+

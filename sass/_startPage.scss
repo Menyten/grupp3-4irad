@@ -1,0 +1,28 @@
+.start-page {
+  .bg-img {
+    background-image: url("/assets/img/scroll.png");
+    background-size: 100% 100%;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    h1 {
+      font-family: 'Charm', cursive;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    p {
+      width: 50%;
+      margin-left: 25%;
+      font-family: 'Charm', cursive;
+      font-size: 20px;
+    }
+    a {
+      font-family: "Pirata One", cursive;
+      font-weight: bold;
+      background-color: black;
+      color: #b79675;
+      border-color: black;
+      padding-bottom: 5px;
+      margin-top: 2px !important;
+    }
+  }
+}
