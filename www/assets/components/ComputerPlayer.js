@@ -29,14 +29,19 @@ class ComputerPlayer {
     //     }
     //   }
     // }
-    setTimeout(() => this.makeSmartMove(), 2000);
+    // setTimeout(() => this.makeSmartMove(), 2000);
+    setTimeout(() => this.makeDeepMove(), 2000);
   }
 
   makeRealMove(move) {
-    console.log('before move', this.positionEvaluator.evaluatePosition(this.gameboard));
     console.log('making move', move);
     this.columns[move].createMarker();
-    console.log('after move', this.positionEvaluator.evaluatePosition(this.gameboard));
+  }
+  
+  makeDeepMove() {
+    const evaluations = this.positionEvaluator.evaluateWithDepth(this.gameboard, 50);
+    const move = this.positionEvaluator.chooseBestMove(evaluations, this.player);
+    this.makeRealMove(move);
   }
 
   chooseRandomMove(moves) {
@@ -166,7 +171,7 @@ class ComputerPlayer {
     const index = newBoard[move].indexOf(0);
     newBoard[move].splice(index, 1, player);
     return newBoard
-  }  
+  }
   
   evaluateNMoves(n) {
     const player = this.player;
