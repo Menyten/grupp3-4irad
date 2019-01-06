@@ -74,6 +74,9 @@ class PositionEvaluator {
     if (playerOneHasEvenThreat) {
       evaluation += 1;
     }
+    if (playerTwoHasOddThreat) {
+      evaluation -=1;
+    }
     return evaluation
   }
 
