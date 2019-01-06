@@ -32,7 +32,6 @@ class HighscoreManager {
       })
     });
     await this.getNewHighscoreList();
-    console.log('gotten new list', this.highscoreList);
   }
 }
 

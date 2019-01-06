@@ -23,7 +23,6 @@ class GamePage extends Component {
 
   newInput() {
     this.activeGame = false;
-    this.inputPage.run();
   }
   
   showNavFoot(){

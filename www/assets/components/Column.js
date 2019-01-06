@@ -58,8 +58,7 @@ class Column extends Component {
       if (this.board.highscoreManager.checkForHighscore(potentialWin.moves)) {
         this.board.highscoreManager.postNewHighscore(winnerName, potentialWin.moves);
       }
-    }
-    if (this.board.drawChecker.checkDraws(this.board.columns)) {
+    } else if (this.board.drawChecker.checkDraws(this.board.columns)) {
       this.board.gameEnded = true;
       App.modals.drawModal();
       this.board.animateNonWinningMarkers();
