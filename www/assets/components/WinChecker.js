@@ -10,7 +10,7 @@ class WinChecker {
 
   checkForHorizontalWin(columns) {
     // for each row, loop through the first three markers and check if the following four are placed by the same playa
-    
+
     // outer loop for rows
     for (let i = 0; i <= 6; i++) {
       // inner loop for columns
@@ -28,7 +28,7 @@ class WinChecker {
           // save the winner as a variable
           const winner = columns[j].markers[i].player
           // save the four winning markers to an array
-          const markers = [columns[j].markers[i], columns[j+1].markers[i], columns[j+2].markers[i], columns[j+3].markers[i]];
+          const markers = [columns[j].markers[i], columns[j + 1].markers[i], columns[j + 2].markers[i], columns[j + 3].markers[i]];
           // check if there are more connected markers by the same player, if so add them too
           let k = 4;
           while (columns[j + k]) {
@@ -87,7 +87,7 @@ class WinChecker {
           // save the winner as a variable
           const winner = columns[i].markers[j].player
           // save the four winning markers to an array:
-          const markers = [columns[i].markers[j], columns[i+1].markers[j+1], columns[i+2].markers[j+2], columns[i+3].markers[j+3]];
+          const markers = [columns[i].markers[j], columns[i + 1].markers[j + 1], columns[i + 2].markers[j + 2], columns[i + 3].markers[j + 3]];
           // check if there are more connected markers by the same player, if so add them too
           let k = 4;
           while (columns[i + k] && columns[i + k].markers[j + k]) {
@@ -98,7 +98,7 @@ class WinChecker {
           }
           // return information about the win
           return {
-            moves: Math.ceil(Marker.count/2),
+            moves: Math.ceil(Marker.count / 2),
             winner: winner,
             markers: markers,
 
@@ -117,7 +117,7 @@ class WinChecker {
           // save the winner as a variable
           const winner = columns[i].markers[j].player
           // save the four winning markers to an array:
-          const markers = [columns[i].markers[j], columns[i+1].markers[j-1], columns[i+2].markers[j-2], columns[i+3].markers[j-3]];
+          const markers = [columns[i].markers[j], columns[i + 1].markers[j - 1], columns[i + 2].markers[j - 2], columns[i + 3].markers[j - 3]];
           // check if there are more connected markers by the same player, if so add them too
           let k = 4;
           while (columns[i + k] && columns[i + k].markers[j - k]) {
@@ -128,12 +128,60 @@ class WinChecker {
           }
           // return information about the win
           return {
-            moves: Math.ceil(Marker.count/2),
+            moves: Math.ceil(Marker.count / 2),
             winner: winner,
             markers: markers
           }
         }
       }
     }
+  }
+
+  reducedBoardWinChecker(b) {
+    // this is the same wincheck as above but for the board reduced to 0s 1s and 2s, and returns only false, 1 or 2
+    // we use the variable b for board because its gonna be typed so many times
+    // and the risk for confusion is minimal
+    // horizontal check:
+    // loop for columns
+    for (let i = 0; i <= 3; i++) {
+      // loop for rows
+      for (let j = 0; j <= 5; j++) {
+        // p for player. again minimal risk of confusion
+        const p = b[i][j];
+        if (p !== 0 && p === b[i + 1][j] && p === b[i + 2][j] && p === b[i + 3][j]) {
+          return p
+        }
+      }
+    }
+    // vertical check
+    // loop for columns
+    for (let i = 0; i <= 6; i++) {
+      // loop for rows
+      for (let j = 0; j <= 2; j++) {
+        const p = b[i][j];
+        if (p !== 0 && p === b[i][j + 1] && p === b[i][j + 2] && p === b[i][j + 3]) {
+          return p
+        }
+      }
+    }
+    // diagonal checks
+    // columns
+    for (let i = 0; i <= 3; i++) {
+      // first rows
+      for (let j = 0; j <= 2; j++) {
+        const p = b[i][j];
+        if (p !== 0 && p === b[i + 1][j + 1] && p === b[i + 2][j + 2] && p === b[i + 3][j + 3]) {
+          return p
+        }
+      }
+      // last rows
+      for (let j = 3; j <= 5; j++) {
+        const p = b[i][j];
+        if (p !== 0 && p === b[i + 1][j - 1] && p === b[i + 2][j - 2] && p === b[i + 3][j - 3]) {
+          return p
+        }
+      }
+    }
+    return false
   }
 }

@@ -7,10 +7,10 @@ class Board extends Component {
     this.numberOfRows = 6;
     this.createColumns();
     this.playPage = playPage;
-    this.playerTurn = Math.floor((Math.random() * 2) + 1);  
+    this.playerTurn = 1;
     this.winChecker = new WinChecker();
     this.drawChecker = new DrawChecker();
-    this.computerPlayer = new ComputerPlayer();
+    this.computerPlayer = new ComputerPlayer(this.columns);
     this.gameEnded = false;
     this.highscoreManager = new HighscoreManager();
 
