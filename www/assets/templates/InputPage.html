@@ -1,52 +1,80 @@
-<section>
-  <section class="row">
+<section class="row my-inputpage-container">
 
-    <section class="col-6">
-      <div class="form-group">
-        <label for="player-name">Spelare 1:</label>
-        <input type="text" class="form-control player-name" id="player1-name" placeholder="Skriv spelarens namn">
-      </div>
+  <section class="col-lg-6 my-inputpage-col1">
+    <section class="row">
+
+      <section class="col-12">
+        <div class="form-group my-formgroup-player1">
+          <label for="player-name" class="player-name-header">Spelare 1</label>
+          <input type="text" class="form-control player-name" id="player1-name" placeholder="Skriv spelarens namn">
+        </div>
+      </section>
+
+      <section class="col-12 player1-radiobuttons">
+        <label>
+          <input type="radio" class="option-input radio player1-check-human" name="example" checked />
+          Spelare
+        </label>
+        <label>
+          <input type="radio" class="option-input radio player1-check-computer" name="example" />
+          Dator
+        </label> 
+      </section>
+   
+      <section class="col-12 player1-img-section">  
+            <img src="/assets/img/pirates/pirate1.jpg" class="pirate1-img active" >  
+            <img src="/assets/img/pirates/pirate2.jpg" class="pirate2-img">           
+            <img src="/assets/img/pirates/pirate3.jpg" class="pirate3-img">
+            <img src="/assets/img/pirates/pirate4.jpg" class="pirate4-img">       
+      </section>
+
     </section>
-
-    <section class="col-6">
-      <div class="form-group">
-        <label for="type-of-player">Typ</label>
-        <select class="form-control" id="type-of-player1">
-          <option value="human">Spelare</option>
-          <option value="computer">Dator</option>
-        </select>
-      </div>
-    </section>
-
   </section>
 
-  <section class="row">
+  
+  <section class="col-lg-6 my-inputpage-col2">
+    <section class="row">
 
-    <section class="col-6">
-      <div class="form-group">
-        <label for="player2-name">Spelare 2:</label>
-        <input type="text" class="form-control player-name" id="player2-name" placeholder="Skriv spelarens namn">  <!-- required pattern=".{2,10}"regEx för max min length -->
+      <section class="col-12">
+        <div class="form-group my-formgroup-player2">
+          <label for="player2-name" class="player-name-header">Spelare 2</label>
+          <input type="text" class="form-control player-name" id="player2-name" placeholder="Skriv spelarens namn">  <!-- required pattern=".{2,10}"regEx för max min length -->
       </div>
-    </section>
+      </section>
 
-    <section class="col-6">
-      <div class="form-group">
-        <label for="type-of-player2">Typ</label>
-        <select class="form-control" id="type-of-player2">
-          <option value="human">Spelare</option>
-          <option value="computer">Dator</option>
-        </select>
-      </div>
-    </section>
+      <section class="col-12 player2-radiobuttons">
+        <label>
+          <input type="radio" class="option-input radio player2-check-human" name="example2" />
+          Spelare
+        </label>
+        <label> 
+          <input type="radio" class="option-input radio player2-check-computer" name="example2" checked />
+          Dator
+        </label> 
+      </section>
 
+      <section class="col-12 player2-img-section">    
+          <img src="/assets/img/pirates/pirate1.jpg" class="pirate1-img" >  
+          <img src="/assets/img/pirates/pirate2.jpg" class="pirate2-img">           
+          <img src="/assets/img/pirates/pirate3.jpg" class="pirate3-img">
+          <img src="/assets/img/pirates/pirate4.jpg" class="pirate4-img active">        
+      </section>
+
+    </section>
   </section>
 
-  <section class="row">
-    <section class="col-6">
+
+
+  <section class="row start-goback-buttons">
+    
+    <section class="col-6 balle1">
       <a href="/" class="btn btn-danger" role="button" aria-pressed="true">Tillbaka</a>
     </section>
-    <section class="col-6">
+    <section class="col-6 balle2">
       <button id="start-game" class="btn btn-primary inputButton" disabled="${this.getValidationStatus()}">Spela</button>
     </section>
+
   </section>
+
+
 </section>

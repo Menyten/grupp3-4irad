@@ -1,0 +1,132 @@
+
+.my-inputpage-container{
+    font-family: 'Pirata One', cursive;
+    margin-top:50px;  
+}
+
+.my-inputpage-col1{
+
+}
+    .my-formgroup-player1{
+        text-align: center;
+    }
+    .player-name-header{
+        font-size:200%; 
+        padding-bottom:20px;
+    }
+    .player-name{
+        width:200px;
+        margin:auto;
+    }
+    .player1-img-section{
+        margin-top:35px;
+        text-align:center;
+    }
+    .pirate1-img,.pirate2-img,.pirate3-img,.pirate4-img{  
+        cursor:pointer;
+        opacity:0.3;
+        border-radius:50px;      
+        display:inline-block; 
+    }
+    .pirate1-img:hover,.pirate2-img:hover,.pirate3-img:hover,.pirate4-img:hover{
+        opacity:1;
+    }
+    .pirate1-img.active,.pirate2-img.active,.pirate3-img.active,.pirate4-img.active{
+        opacity:1;
+    }
+  
+.my-inputpage-col2{
+
+}
+    .my-formgroup-player2{
+        text-align: center;
+    }
+    .player2-img-section{
+        margin-top:35px;
+        text-align:center;
+    }
+
+.start-goback-buttons{
+    padding-top:50px;
+    margin:auto; 
+}
+
+.player1-radiobuttons, .player2-radiobuttons{
+    text-align:center;
+}
+.player1-radiobuttons label, .player2-radiobuttons label{
+    margin-left:20px;
+}
+  
+  .option-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 13.33333px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    transition: all 0.15s ease-out 0s;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+  }
+  .option-input:hover {
+    background: #9faab7;
+  }
+  .option-input:checked {
+    background: black;
+  }
+  .option-input:checked::before {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    content: '✔';
+    display: inline-block;
+    font-size: 26.66667px;
+    text-align: center;
+    line-height: 30px;
+  }
+  .option-input:checked::after {
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.65s;
+    background: #40e0d0;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
+  }
+  
+
+@media screen and(max-width:991px){
+    .player1-img-section{
+        padding-left:50px;
+        padding-right:50px;
+    }
+    .my-inputpage-col2{
+        margin-top:60px;
+    }
+    .player2-img-section{
+        padding-left:50px;
+        padding-right:50px;
+    }
+    
+    .start-goback-buttons{
+        padding-top:80px;
+        padding-bottom:80px;
+    }
+}
+
+  
