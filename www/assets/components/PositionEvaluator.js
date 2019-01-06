@@ -6,7 +6,6 @@ class PositionEvaluator {
   // this motherfucker evaluates positions
   // positive numbers are good for player one, negative good for player two
   evaluatePosition(board) {
-    const player = this.determinePlayerTurn(board);
     const win = this.winChecker.reducedBoardWinChecker(board);
     // if the position is won it is easy to evaluate
     if (win) {
@@ -16,7 +15,7 @@ class PositionEvaluator {
   }
 
   evaluateThreats(board) {
-    // we want the player&enemy as a string so we use it as a property key
+    // we want the player&enemy as a string so we can use it as a property key
     const player = this.determinePlayerTurn(board).toString();
     const enemy = player === '1' ? '2' : '1';
     let evaluation = 0;
@@ -128,7 +127,7 @@ class PositionEvaluator {
 
     for (let move of legalMoves) {
       let newBoard = this.makeTheoreticalMove(board, move);
-      // now make the best move for each player 'depth' amount of times
+      // now make the best (to our knowledge) move for each player 'depth' amount of times
       for (let j = 1; j < depth; j++) {
         const player = this.determinePlayerTurn(newBoard);
         evaluations[move] = this.evaluatePosition(newBoard);
@@ -145,7 +144,6 @@ class PositionEvaluator {
         if (this.findLegalMoves(newBoard).length === 0) { break }
       }
     }
-    console.log('evaluations with depth', depth, evaluations, 'for board', board);
     return evaluations
   }
 
