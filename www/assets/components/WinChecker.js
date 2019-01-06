@@ -140,6 +140,7 @@ class WinChecker {
   }
 
   reducedBoardWinChecker(b) {
+    // this is the same wincheck as above but for the board reduced to 0s 1s and 2s, and returns only false, 1 or 2
     // we use the variable b for board because its gonna be typed so many times
     // and the risk for confusion is minimal
     // horizontal check:

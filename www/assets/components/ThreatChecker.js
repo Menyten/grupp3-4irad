@@ -8,6 +8,7 @@ class ThreatChecker {
   }
 
   getAllThreats(b) {
+    // this function is ugly and repeats itself too much but I'm not motivated to fix it
     // b is for board
     const threats = [];
     // check horizontal threats
@@ -16,6 +17,7 @@ class ThreatChecker {
         const markers = [b[i][j], b[i+1][j], b[i+2][j], b[i+3][j]];
         const threat = this.threatExists(markers);
         if (threat) {
+          // zeroindex is the relative index of the column with the empty slot (so 0 if its the leftmost column of the threat)
           const zeroIndex = markers.indexOf(0);
           const coords = this.generateCoords(i, j, 1, 0);
           const playable = this.isThreatPlayable(b, coords, zeroIndex);
@@ -111,6 +113,10 @@ class ThreatChecker {
   }
 
   isThreatPlayable(board, coords, zeroIndex) {
+    // coords is the set of coordinates for the whole threat, zeroindex is the relative index of empty slot
+    // so coords[zeroIndex[0]] is the x-coordinate (column) of the empty slot in the threat
+    // if the first zero of that column has the same index as the y-coordinate (row) of the empty slot of the threat
+    // it can be immediately played
     if (board[coords[zeroIndex][0]].indexOf(0) === coords[zeroIndex][1]) {
       return true
     } else {

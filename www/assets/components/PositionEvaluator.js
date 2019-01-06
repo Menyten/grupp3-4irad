@@ -6,92 +6,79 @@ class PositionEvaluator {
   // this motherfucker evaluates positions
   // positive numbers are good for player one, negative good for player two
   evaluatePosition(board) {
-    let evaluation = 0;
     const player = this.determinePlayerTurn(board);
     const win = this.winChecker.reducedBoardWinChecker(board);
+    // if the position is won it is easy to evaluate
     if (win) {
       return win === 1 ? 9999 : -9999
     }
-    if (player === 1) {
-      return this.evaluatePlayerOneTurn(board)
-    } else {
-      return this.evaluatePlayerTwoTurn(board)
-    }
+    return this.evaluateThreats(board);
   }
 
-  evaluatePlayerOneTurn(board) {
+  evaluateThreats(board) {
+    // we want the player&enemy as a string so we use it as a property key
+    const player = this.determinePlayerTurn(board).toString();
+    const enemy = player === '1' ? '2' : '1';
     let evaluation = 0;
-    const { 
-      playerOnePlayableThreats, playerOneUnplayableThreats, playerTwoPlayableThreats, playerTwoUnplayableThreats 
-    } = this.getThreats(board);
-    if (playerOnePlayableThreats.length > 0) {
-      return 9998
-    }
-    if (playerTwoPlayableThreats.length > 1) {
-      return -9997
-    }
-    if (playerTwoPlayableThreats === 1) {
-      let moveOfDeath = playerTwoPlayableThreats[0].winningMove;
-      moveOfDeath[1]++;
-      if (playerTwoUnplayableThreats.some(threat => threat.winningMove === moveOfDeath)) {
-        return -9996
-      }
-    }
-    const playerOneHasOddThreat = playerOneUnplayableThreats.some(threat => threat.odd);
-    const playerOneHasEvenThreat = playerOneUnplayableThreats.some(threat => !threat.odd);
-    const playerTwoHasOddThreat = playerTwoUnplayableThreats.some(threat => threat.odd);
-    const playerTwoHasEvenThreat = playerTwoUnplayableThreats.some(threat => !threat.odd);
-
-    if (playerOneHasOddThreat && playerTwoHasOddThreat) {
-      return 0
-    }
-    if (playerOneHasOddThreat && !playerTwoHasOddThreat) {
-      return 100
-    }
-    if (playerTwoHasEvenThreat && !playerOneHasEvenThreat) {
-      return -100
-    } else {
-      return 0
-    }
-
+    // get the threats, split up by player and immediate playability
+    const threats = this.getThreats(board);
+    // first evaluate the playable threats
+    evaluation = this.evaluatePlayableThreats(threats, player, enemy);
+    // if we find a won position, return it, otherwise move on to unplayable threats evaluation
+    if (evaluation) { return evaluation }
+    evaluation = this.evaluateUnplayableThreats(board, threats, player, enemy);
+    
+    // we have no more tricks so just return the evals
+    
     return evaluation
   }
 
-  evaluatePlayerTwoTurn(board) {
-    const { 
-      playerOnePlayableThreats, playerOneUnplayableThreats, playerTwoPlayableThreats, playerTwoUnplayableThreats 
-    } = this.getThreats(board);
-    if (playerTwoPlayableThreats.length > 0) {
-      return -9998
+  evaluatePlayableThreats(threats, player, enemy) {
+    // this function will return evaluation for positions that are clearly won or lost, otherwise false
+    // if the player whose turn it is has a playable threat, it is again easy to evaluate
+    if (threats[player].playable.length > 0) {
+      return player === '1' ? 9998 : -9998
     }
-    if (playerOnePlayableThreats.length > 1) {
-      return 9997
+    // if the enemy has two different playable threats, it is again easy to evaluate
+    if (threats[enemy].playable.length > 1) {
+      return player === '1' ? -9997 : 9997
     }
-    if (playerOnePlayableThreats === 1) {
-      let moveOfDeath = playerOnePlayableThreats[0].winningMove;
+    // if the enemy has a playable threat, and an unplayable that becomes playable if I prevent the first one, its again lost
+    if (threats[enemy].playable.length === 1) {
+      // so we check if enemy has another threat with the winning move directly above the first one
+      let moveOfDeath = threats[enemy].playable[0].winningMove;
       moveOfDeath[1]++;
-      if (playerOneUnplayableThreats.some(threat => threat.winningMove === moveOfDeath)) {
-        return 9996
+      if (threats[enemy].unplayable.some(threat => threat.winningMove === moveOfDeath)) {
+        return player === '1' ? -9996 : 9996
       }
     }
-    const playerOneHasOddThreat = playerOneUnplayableThreats.some(threat => threat.odd);
-    const playerOneHasEvenThreat = playerOneUnplayableThreats.some(threat => !threat.odd);
-    const playerTwoHasOddThreat = playerTwoUnplayableThreats.some(threat => threat.odd);
-    const playerTwoHasEvenThreat = playerTwoUnplayableThreats.some(threat => !threat.odd);
-
-    if (playerOneHasOddThreat && playerTwoHasOddThreat) {
-      return 0
-    }
-    if (playerOneHasOddThreat && !playerTwoHasOddThreat) {
-      return 100
-    }
-    if (playerTwoHasEvenThreat && !playerOneHasEvenThreat) {
-      return -100
-    } else {
-      return 0
-    }
+    return false
   }
 
+  evaluateUnplayableThreats(board, threats, player, enemy) {
+    let evaluation = 0;
+    // we try to evaluate a position based on the threats
+    const playerOneHasOddThreat = threats['1'].unplayable.some(threat => threat.odd);
+    const playerOneHasEvenThreat = threats['1'].unplayable.some(threat => !threat.odd);
+    const playerTwoHasOddThreat = threats['2'].unplayable.some(threat => threat.odd);
+    const playerTwoHasEvenThreat = threats['2'].unplayable.some(threat => !threat.odd);
+
+    // if player one has an odd threat and player two does not, its good news for player one
+    if (playerOneHasOddThreat && !playerTwoHasOddThreat) {
+      evaluation += 200;
+    }
+    // if player two has an even threat, its good for player two but not good enough if player one has an odd threat and player two does not
+    if (playerTwoHasEvenThreat) {
+      evaluation -= 100;
+    }
+    // even threats are not very effective for player one, but its better than nothing
+    if (playerOneHasEvenThreat) {
+      evaluation += 1;
+    }
+    return evaluation
+  }
+
+  
   determinePlayerTurn(board) {
     // determine whos turn it is by counting the markers
     let markers = 0;
@@ -117,17 +104,17 @@ class PositionEvaluator {
 
   getThreats(board) {
     const threats = this.threatChecker.getAllThreats(board);
-    const playerOnePlayableThreats = threats.filter(threat => threat.player === 1 && threat.playable === true);
-    const playerOneUnplayableThreats = threats.filter(threat => threat.player === 1 && threat.playable === false);
-    const playerTwoPlayableThreats = threats.filter(threat => threat.player === 2 && threat.playable === true);
-    const playerTwoUnplayableThreats = threats.filter(threat => threat.player === 2 && threat.playable === false);
-
-    return {
-      playerOnePlayableThreats: playerOnePlayableThreats,
-      playerOneUnplayableThreats: playerOneUnplayableThreats,
-      playerTwoPlayableThreats: playerTwoPlayableThreats,
-      playerTwoUnplayableThreats: playerTwoUnplayableThreats
+    const splitThreats = {
+      '1': {},
+      '2': {}
     }
+    // split the threats up by player & playability for easy processing
+    splitThreats['1'].playable = threats.filter(threat => threat.player === 1 && threat.playable === true);
+    splitThreats['1'].unplayable = threats.filter(threat => threat.player === 1 && threat.playable === false);
+    splitThreats['2'].playable = threats.filter(threat => threat.player === 2 && threat.playable === true);
+    splitThreats['2'].unplayable = threats.filter(threat => threat.player === 2 && threat.playable === false);
+
+    return splitThreats
   }
 
   // and now we try to make a function to evaluate the position after checking a few moves into the future, making the best move for each player
@@ -145,12 +132,16 @@ class PositionEvaluator {
       for (let j = 1; j < depth; j++) {
         const player = this.determinePlayerTurn(newBoard);
         evaluations[move] = this.evaluatePosition(newBoard);
+        // adjust winning/losing moves based on how many turns it takes, so to "stay alive" longer in a losing game
+        // and win faster in a won game
         evaluations[move] = this.adjustEvaluationBasedOnTurns(evaluations[move], player, j);
-        if (this.winChecker.reducedBoardWinChecker(newBoard)) { break }
-        console.log('evluation for the nth time', j);
+        // if a player has won or drawn, make no more moves
+        if (this.winChecker.reducedBoardWinChecker(newBoard) || this.findLegalMoves(newBoard).length === 0) { break }
+        // otherwise, make the best move and update the state of the board
         const newEvaluations = this.evaluateMoves(newBoard);
         const bestMove = this.chooseBestMove(newEvaluations, player);
         newBoard = this.makeTheoreticalMove(newBoard, bestMove);
+        // if the board is full, make no more moves
         if (this.findLegalMoves(newBoard).length === 0) { break }
       }
     }
@@ -159,6 +150,7 @@ class PositionEvaluator {
   }
 
   adjustEvaluationBasedOnTurns(evaluation, player, turns) {
+    // moves that lose slower and win faster get more favorable evaluation
     if (player === 1 && (evaluation < -600 || evaluation > 600)) {
       return evaluation < 0 ? evaluation + turns : evaluation - turns      
     }
@@ -169,7 +161,6 @@ class PositionEvaluator {
   }
 
   evaluateMoves(board) {
-    console.log('evaluating all the moves for ', board);
     // this function evaluates all seven possible moves and returns an object with all the evaluations
     const evaluations = {};
     for (let move of this.findLegalMoves(board)) {
