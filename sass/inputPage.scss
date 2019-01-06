@@ -1,15 +1,13 @@
 
 .my-inputpage-container{
-    //border:solid red 3px;
     font-family: 'Pirata One', cursive;
     margin-top:50px;  
 }
 
 .my-inputpage-col1{
-    //border:solid black 3px;
+
 }
     .my-formgroup-player1{
-        // border:solid black 1px;
         text-align: center;
     }
     .player-name-header{
@@ -21,14 +19,14 @@
         margin:auto;
     }
     .player1-img-section{
-        //border:dotted 1px grey;
         margin-top:35px;
         text-align:center;
     }
     .pirate1-img,.pirate2-img,.pirate3-img,.pirate4-img{  
         cursor:pointer;
         opacity:0.3;
-        border-radius:50px;       
+        border-radius:50px;      
+        display:inline-block; 
     }
     .pirate1-img:hover,.pirate2-img:hover,.pirate3-img:hover,.pirate4-img:hover{
         opacity:1;
@@ -37,46 +35,26 @@
         opacity:1;
     }
   
-
 .my-inputpage-col2{
-    //border:solid black 3px;  
+
 }
     .my-formgroup-player2{
-        // border:solid black 1px;
         text-align: center;
     }
     .player2-img-section{
-        //border:dotted 1px grey;
         margin-top:35px;
         text-align:center;
     }
 
-
-
 .start-goback-buttons{
-    //border:solid black 1px;
     padding-top:50px;
     margin:auto; 
 }
-.balle1{
-    //border:solid black 1px;
-}
-.balle2{
-    //border:solid black 1px;
-}
-
-
-
-
-
-
 
 .player1-radiobuttons, .player2-radiobuttons{
-    //border:solid black 1px;
     text-align:center;
 }
 .player1-radiobuttons label, .player2-radiobuttons label{
-    //border:solid red 1px;
     margin-left:20px;
 }
   
@@ -131,6 +109,24 @@
     z-index: 100;
   }
   
-  
+
+@media screen and(max-width:991px){
+    .player1-img-section{
+        padding-left:50px;
+        padding-right:50px;
+    }
+    .my-inputpage-col2{
+        margin-top:60px;
+    }
+    .player2-img-section{
+        padding-left:50px;
+        padding-right:50px;
+    }
+    
+    .start-goback-buttons{
+        padding-top:80px;
+        padding-bottom:80px;
+    }
+}
 
   
