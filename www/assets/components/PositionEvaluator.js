@@ -64,7 +64,7 @@ class PositionEvaluator {
 
     // if player one has an odd threat and player two does not, its good news for player one
     if (playerOneHasOddThreat && !playerTwoHasOddThreat) {
-      evaluation += 200;
+      evaluation += 400;
     }
     // if player two has an even threat, its good for player two but not good enough if player one has an odd threat and player two does not
     if (playerTwoHasEvenThreat) {

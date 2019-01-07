@@ -33,16 +33,20 @@ class InputPage extends Component {
   }
 
   selectPlayer1Img(event){
-    $(this.player1PreviousTarget).removeClass('active');
-    $(event.target).addClass('active');
-    this.player1PreviousTarget = event.target;
-    this.playerOneImg = event.target.src;
+    if ($(event.target).hasClass('avatar-img')) {
+      $(this.player1PreviousTarget).removeClass('active');
+      $(event.target).addClass('active');
+      this.player1PreviousTarget = event.target;
+      this.playerOneImg = event.target.src;
+    }
   }
   selectPlayer2Img(event){
-    $(this.player2PreviousTarget).removeClass('active');
-    $(event.target).addClass('active');
-    this.player2PreviousTarget = event.target;
-    this.playerTwoImg = event.target.src;
+    if ($(event.target).hasClass('avatar-img')) {
+      $(this.player2PreviousTarget).removeClass('active');
+      $(event.target).addClass('active');
+      this.player2PreviousTarget = event.target;
+      this.playerTwoImg = event.target.src;
+    }
   }
  
   getValidationStatus(){
