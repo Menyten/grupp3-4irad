@@ -1,14 +1,10 @@
 class WinChecker {
   checkForWin(columns) {
-    let potentialWin = this.checkForHorizontalWin(columns);
-    if (potentialWin) { return potentialWin }
-    potentialWin = this.checkForVerticalWin(columns);
-    if (potentialWin) { return potentialWin }
-    potentialWin = this.checkForDiagonalWin(columns);
-    return potentialWin;
+    return this.checkForHorizontalWin(columns);
   }
 
   checkForHorizontalWin(columns) {
+    let win = false;
     // for each row, loop through the first three markers and check if the following four are placed by the same playa
 
     // outer loop for rows
@@ -38,18 +34,28 @@ class WinChecker {
             k++;
           }
           // return the information about the win
-          return {
-            moves: Math.ceil(Marker.count/2),
-            winner: winner,
-            markers: markers
+          if (!win) {
+            win = {
+              moves: Math.ceil(Marker.count/2),
+              winner: winner,
+              markers: markers
+            }
+          } else {
+            if (winner === win.winner) {
+              win.markers = win.markers.concat(markers);
+              const uniqueMarkers = [];
+              for (let marker of win.markers) {
+                if (!uniqueMarkers.includes(marker)) {
+                  uniqueMarkers.push(marker);
+                }
+              }
+              win.markers = uniqueMarkers;
+            }
           }
         }
       }
     }
-  }
-
-  checkForVerticalWin(columns) {
-    // loop through all columns:
+  
     for (let i = 0; i <= 6; i++) {
       // if there less than four markers, move on to the next
       if (columns[i].markers.length < 4) {
@@ -62,17 +68,31 @@ class WinChecker {
           && columns[i].markers[j].player === columns[i].markers[j + 2].player
           && columns[i].markers[j].player === columns[i].markers[j + 3].player
         ) {
-          return {
-            winner: columns[i].markers[j].player,
-            moves: Math.ceil(Marker.count/2),
-            markers: [columns[i].markers[j+3], columns[i].markers[j+2], columns[i].markers[j+1], columns[i].markers[j]]
+          const markers = [columns[i].markers[j+3], columns[i].markers[j+2], columns[i].markers[j+1], columns[i].markers[j]];
+          const winner = columns[i].markers[j].player;
+          if (!win) {
+            win = {
+              moves: Math.ceil(Marker.count/2),
+              winner: winner,
+              markers: markers
+            }
+          } else {
+            if (winner === win.winner) {
+              win.markers = win.markers.concat(markers);
+              const uniqueMarkers = [];
+              for (let marker of win.markers) {
+                if (!uniqueMarkers.includes(marker)) {
+                  uniqueMarkers.push(marker);
+                }
+              }
+              win.markers = uniqueMarkers;
+            }
           }
         }
       }
     }
-  }
-
-  checkForDiagonalWin(columns) {
+ 
+  
     // we can cover all possible diagonal wins if we check "to the right" from the first four columns, checking upwards from the lower three rows and downwards from the higher three
     // first the outer loop for the columns
     for (let i = 0; i <= 3; i++) {
@@ -97,11 +117,23 @@ class WinChecker {
             k++;
           }
           // return information about the win
-          return {
-            moves: Math.ceil(Marker.count / 2),
-            winner: winner,
-            markers: markers,
-
+          if (!win) {
+            win = {
+              moves: Math.ceil(Marker.count/2),
+              winner: winner,
+              markers: markers
+            }
+          } else {
+            if (winner === win.winner) {
+              win.markers = win.markers.concat(markers);
+              const uniqueMarkers = [];
+              for (let marker of win.markers) {
+                if (!uniqueMarkers.includes(marker)) {
+                  uniqueMarkers.push(marker);
+                }
+              }
+              win.markers = uniqueMarkers;
+            }
           }
         }
       }
@@ -127,14 +159,28 @@ class WinChecker {
             k++;
           }
           // return information about the win
-          return {
-            moves: Math.ceil(Marker.count / 2),
-            winner: winner,
-            markers: markers
+          if (!win) {
+            win = {
+              moves: Math.ceil(Marker.count/2),
+              winner: winner,
+              markers: markers
+            }
+          } else {
+            if (winner === win.winner) {
+              win.markers = win.markers.concat(markers);
+              const uniqueMarkers = [];
+              for (let marker of win.markers) {
+                if (!uniqueMarkers.includes(marker)) {
+                  uniqueMarkers.push(marker);
+                }
+              }
+              win.markers = uniqueMarkers;
+            }
           }
         }
       }
     }
+    return win
   }
 
   reducedBoardWinChecker(b) {
