@@ -35,7 +35,7 @@ class Board extends Component {
       $('#player2').addClass('active-player');
       $('#player1').removeClass('active-player');
       if (this.player2.type === 'computer') {
-        this.computerPlayer.makeMove(this.columns);
+        this.computerPlayer.makeMove();
       }
     }
     else if(this.playerTurn==2){
@@ -43,7 +43,7 @@ class Board extends Component {
       $('#player1').addClass('active-player');
       $('#player2').removeClass('active-player');
       if (this.player1.type === 'computer') {
-        this.computerPlayer.makeMove(this.columns);
+        this.computerPlayer.makeMove();
       }
     }   
   }
@@ -64,9 +64,9 @@ class Board extends Component {
 
   mounted() {
     if (this.playerTurn === 1 && this.player1.type === 'computer') {
-      this.computerPlayer.makeMove(this.columns);
+      this.computerPlayer.makeMove();
     } else if (this.playerTurn === 2 && this.player2.type === 'computer') {
-      this.computerPlayer.makeMove(this.columns);
+      this.computerPlayer.makeMove();
     }
   }
 
