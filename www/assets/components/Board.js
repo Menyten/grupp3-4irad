@@ -13,6 +13,8 @@ class Board extends Component {
     this.computerPlayer = new ComputerPlayer(this.columns);
     this.gameEnded = false;
     this.highscoreManager = new HighscoreManager();
+    this.positionEvaluator = new PositionEvaluator();
+
 
     this.player1 = player1
     this.player2 = player2
@@ -29,6 +31,7 @@ class Board extends Component {
 
   changeTurn(){
     if (this.gameEnded) { return }
+    console.log(this.positionEvaluator.evaluate2(this.computerPlayer.gameboard, 3));
 
     if(this.playerTurn==1){
       this.playerTurn=2;

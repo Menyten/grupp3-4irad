@@ -1,5 +1,9 @@
 [
   {
+    "name": "ww",
+    "score": 4
+  },
+  {
     "name": "iphone",
     "score": 9
   },
@@ -34,9 +38,5 @@
   {
     "name": "två",
     "score": 21
-  },
-  {
-    "name": "mamma",
-    "score": 22
   }
 ]

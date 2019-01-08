@@ -20,8 +20,10 @@ class ComputerPlayer {
   }
   
   makeMove() {
-    const evaluations = this.positionEvaluator.evaluateWithDepth(this.gameboard, 42);
+    const evaluations = this.positionEvaluator.evaluateWithDepth(this.gameboard, 45);
     const move = this.positionEvaluator.chooseBestMove(evaluations, this.player);
+    const coolEvals = this.positionEvaluator.evaluate2(this.gameboard, 3);
+    console.log(coolEvals);
     setTimeout(() => {
       this.columns[move].createMarker();
     }, 2000);

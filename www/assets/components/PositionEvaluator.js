@@ -129,14 +129,17 @@ class PositionEvaluator {
     }
 
     for (let move of legalMoves) {
+      evaluations[move] = {};
       let newBoard = this.makeTheoreticalMove(board, move);
       // now make the best (to our knowledge) move for each player 'depth' amount of times
       for (let j = 1; j < depth; j++) {
+        evaluations[move][j] = {};
         const player = this.determinePlayerTurn(newBoard);
-        evaluations[move] = this.evaluatePosition(newBoard);
+        evaluations[move][j].evaluation = this.evaluatePosition(newBoard);
         // adjust winning/losing moves based on how many turns it takes, so to "stay alive" longer in a losing game
         // and win faster in a won game
-        evaluations[move] = this.adjustEvaluationBasedOnTurns(evaluations[move], player, j);
+        evaluations[move][j].evaluation = this.adjustEvaluationBasedOnTurns(evaluations[move][j].evaluation, player, j);
+        evaluations[move][j].state = JSON.parse(JSON.stringify(newBoard));
         // if a player has won or drawn, make no more moves
         if (this.winChecker.reducedBoardWinChecker(newBoard) || this.findLegalMoves(newBoard).length === 0) { break }
         // otherwise, make the best move and update the state of the board
@@ -213,6 +216,9 @@ class PositionEvaluator {
 
   findLegalMoves(board) {
     const legalMoves = [];
+    if (this.winChecker.reducedBoardWinChecker(board)) {
+      return legalMoves
+    }
     // if there is a 0 anywhere in the column, add its index to the list of legal moves
     for (let i = 0; i <= 6; i++) {
       if (board[i].indexOf(0) >= 0) {
@@ -221,4 +227,42 @@ class PositionEvaluator {
     }
     return legalMoves
   }
+
+  evaluateBoard(board) {
+    return {
+      evaluation: this.evaluatePosition(board),
+      board: board
+    }
+  }
+
+  evaluate2(board, depth) {
+    const t0 = performance.now();
+    const evaluations = {};
+    let layers = 0;
+    for (let move of this.findLegalMoves(board)) {
+      evaluations[move] = this.evaluateBoard(this.makeTheoreticalMove(board, move));
+    }
+    let toEvaluate = [];
+    for (let move in evaluations) {
+      toEvaluate.push(evaluations[move])
+    }
+    for (let i = 0; i < depth; i++) {
+      let newEvals = [];
+      for (let toEval of toEvaluate) {
+        for (let move of this.findLegalMoves(toEval.board)) {
+          layers = i;
+          toEval[move] = this.evaluateBoard(this.makeTheoreticalMove(toEval.board, move));
+          newEvals.push(toEval[move]);
+        }
+      }
+      toEvaluate = newEvals;
+    }
+    console.log('these evaluations of depth', depth, 'took me', ((performance.now() - t0) / 1000).toFixed(3), 'seconds');
+    evaluations.layers = layers + 1;
+    return evaluations
+  }
+
+  minMax(evaluations) {
+  }
+
 }
